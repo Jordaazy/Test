@@ -17,7 +17,7 @@ Objectif : extraire la stratégie de trading de la chaîne YouTube
 data/
   index.csv               # toutes les vidéos : id, date, titre, durée, URL, type, langue, sous-titres dispo
   meta/<id>.json          # métadonnées complètes par vidéo (description, chapitres, pistes de sous-titres)
-  subs_raw/               # sous-titres bruts (json3 ou vtt)
+  subs_raw/               # sous-titres bruts (json3 ou vtt) — non versionnés, régénérables
   subs_manifest.csv       # piste choisie par vidéo (manuel / auto original / auto traduit)
   transcripts/*.md        # transcriptions propres, paragraphes horodatés [H:MM:SS]
   transcripts/json/*.json # segments fins {start, end, text} pour la recherche
@@ -32,11 +32,15 @@ scripts/                  # pipeline
 ## Phase 0 — exécution
 
 ```bash
-pip install -r requirements.txt
-bash scripts/run_phase0.sh
-# si YouTube répond "Sign in to confirm you're not a bot" :
-COOKIES=cookies.txt bash scripts/run_phase0.sh
+pip install -r requirements.txt          # yt-dlp + Node.js 22+ (ou Deno) requis
+python3 scripts/run_phase0.py --test     # essai sur 3 vidéos
+python3 scripts/run_phase0.py            # toute la chaîne
+python3 scripts/run_phase0.py --sleep 4  # plus lent si YouTube renvoie 429 / « not a bot »
+python3 scripts/run_phase0.py --cookies cookies.txt   # dernier recours
 ```
+
+Si YouTube bloque l'IP du serveur cloud : guide pas à pas pour lancer la collecte sur un ordinateur
+personnel dans [`docs/phase0_en_local.md`](docs/phase0_en_local.md).
 
 Chaque étape est reprenable (ce qui est déjà téléchargé est sauté).
 

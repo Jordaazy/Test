@@ -46,6 +46,7 @@ def base_opts(args):
         "ignoreerrors": True,
         "sleep_interval_requests": args.sleep,
         "extractor_retries": 3,
+        "extractor_args": {"youtube": {"skip": ["hls", "dash"]}},  # pas besoin des flux vidéo
         "js_runtimes": {"node": {}, "deno": {}, "bun": {}},  # défis JS YouTube (yt-dlp-ejs)
     }
     if args.cookies:
@@ -79,7 +80,7 @@ def list_ids(args):
 def fetch_meta(vid, args):
     out = META_DIR / f"{vid}.json"
     if out.exists():
-        return json.loads(out.read_text())
+        return json.loads(out.read_text(encoding="utf-8"))
     with yt_dlp.YoutubeDL(base_opts(args)) as ydl:
         info = ydl.extract_info(f"https://www.youtube.com/watch?v={vid}", download=False)
     if not info:
@@ -94,7 +95,7 @@ def fetch_meta(vid, args):
         for lang, tracks in (info.get("automatic_captions") or {}).items()
         if lang.endswith("-orig") or lang.split("-")[0] in ("fr", "en")
     }
-    out.write_text(json.dumps(meta, ensure_ascii=False, indent=1))
+    out.write_text(json.dumps(meta, ensure_ascii=False, indent=1), encoding="utf-8")
     return meta
 
 
@@ -103,6 +104,8 @@ def main():
     ap.add_argument("--channel", default="https://www.youtube.com/@amaspft")
     ap.add_argument("--cookies", default=None)
     ap.add_argument("--sleep", type=float, default=1.0)
+    ap.add_argument("--limit", type=int, default=None,
+                    help="ne récupère les métadonnées complètes que des N vidéos les plus récentes (test)")
     args = ap.parse_args()
 
     META_DIR.mkdir(parents=True, exist_ok=True)
@@ -114,13 +117,19 @@ def main():
     for i, (vid, flat) in enumerate(ids.items(), 1):
         # Après 5 échecs consécutifs (ex. "confirm you're not a bot"), on arrête de solliciter
         # YouTube vidéo par vidéo et on garde les infos "flat" pour le reste.
-        meta = fetch_meta(vid, args) if streak < 5 or (META_DIR / f"{vid}.json").exists() else None
+        want = args.limit is None or i <= args.limit
+        cached = (META_DIR / f"{vid}.json").exists()
+        meta = fetch_meta(vid, args) if cached or (want and streak < 5) else None
         if meta:
             streak = 0
-        else:
+        elif want:
             streak += 1
             failed.append(vid)
-            meta = {}
+            if streak == 5:
+                print("[index] 5 échecs consécutifs : YouTube bloque probablement les requêtes "
+                      "(« Sign in to confirm you're not a bot » / erreur 429). Arrêt des requêtes vidéo.",
+                      file=sys.stderr)
+        meta = meta or {}
         d = meta.get("upload_date") or ""
         duration = meta.get("duration") or flat["duration"]
         rows.append({

@@ -65,7 +65,7 @@ def main():
 
     RAW_DIR.mkdir(parents=True, exist_ok=True)
     only = set(filter(None, args.only.split(",")))
-    metas = [json.loads(p.read_text()) for p in sorted(META_DIR.glob("*.json"))]
+    metas = [json.loads(p.read_text(encoding="utf-8")) for p in sorted(META_DIR.glob("*.json"))]
     if only:
         metas = [m for m in metas if m["id"] in only]
 
@@ -79,6 +79,7 @@ def main():
             if not existing:
                 opts = {
                     "quiet": True,
+                    "noprogress": True,
                     "skip_download": True,
                     "ignoreerrors": True,
                     "writesubtitles": kind == "manual",
@@ -88,6 +89,7 @@ def main():
                     "outtmpl": {"default": str(RAW_DIR / "%(id)s.%(ext)s")},
                     "sleep_interval_requests": args.sleep,
                     "sleep_interval_subtitles": args.sleep,
+                    "extractor_args": {"youtube": {"skip": ["hls", "dash"]}},  # pas besoin des flux vidéo
                     "js_runtimes": {"node": {}, "deno": {}, "bun": {}},  # défis JS YouTube (yt-dlp-ejs)
                 }
                 if args.cookies:

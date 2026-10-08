@@ -67,12 +67,12 @@ def main():
     for r in rows:
         vid = r["video_id"]
         mpath = META_DIR / f"{vid}.json"
-        meta = json.loads(mpath.read_text()) if mpath.exists() else {}
+        meta = json.loads(mpath.read_text(encoding="utf-8")) if mpath.exists() else {}
         title, desc = r["title"], meta.get("description") or ""
         tpath = TJSON / f"{vid}.json"
         transcript = ""
         if tpath.exists():
-            transcript = " ".join(s["text"] for s in json.loads(tpath.read_text())["segments"])
+            transcript = " ".join(s["text"] for s in json.loads(tpath.read_text(encoding="utf-8"))["segments"])
         words = max(len(transcript.split()), 1)
 
         scores, top_kw = {}, {}

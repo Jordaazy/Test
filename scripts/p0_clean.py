@@ -120,7 +120,7 @@ def main():
         if not row["file"]:
             continue
         path = RAW_DIR / row["file"]
-        meta = json.loads((META_DIR / f"{vid}.json").read_text())
+        meta = json.loads((META_DIR / f"{vid}.json").read_text(encoding="utf-8"))
         segs = parse_json3(path) if path.suffix == ".json3" else parse_vtt(path)
         if not segs:
             print(f"[clean] {vid}: piste vide", file=sys.stderr)
@@ -134,7 +134,7 @@ def main():
         (OUT_DIR / "json" / f"{vid}.json").write_text(json.dumps(
             {"video_id": vid, "title": meta.get("title"), "date": date, "url": url,
              "sub_lang": row["lang"], "sub_kind": row["kind"], "sub_note": row["note"], "segments": segs},
-            ensure_ascii=False, indent=0))
+            ensure_ascii=False, indent=0), encoding="utf-8")
 
         out = [f"# {meta.get('title')}", "",
                f"- **URL** : {url}",

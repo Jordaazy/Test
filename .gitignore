@@ -1,3 +1,6 @@
 cookies*.txt
 __pycache__/
 *.pyc
+.venv/
+# sous-titres bruts : régénérables, et data/transcripts/json garde tous les segments horodatés
+data/subs_raw/
