@@ -103,12 +103,17 @@ def main():
         rows.append(row)
         print(f"[subs] {vid} {row['kind']:6} {row['lang']:8} {row['note']}", file=sys.stderr)
 
+    # Fusion avec le manifeste existant (une exécution partielle n'efface pas les autres lignes).
+    merged = {}
+    if MANIFEST.exists():
+        merged = {r["video_id"]: r for r in csv.DictReader(MANIFEST.open(encoding="utf-8"))}
+    merged.update({r["video_id"]: r for r in rows})
     with MANIFEST.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=["video_id", "lang", "kind", "note", "file"])
         w.writeheader()
-        w.writerows(rows)
-    ok = sum(1 for r in rows if r["file"])
-    print(f"[subs] {ok}/{len(rows)} pistes téléchargées -> {RAW_DIR.relative_to(ROOT)}", file=sys.stderr)
+        w.writerows(sorted(merged.values(), key=lambda r: r["video_id"]))
+    ok = sum(1 for r in merged.values() if r["file"])
+    print(f"[subs] {ok}/{len(merged)} pistes téléchargées -> {RAW_DIR.relative_to(ROOT)}", file=sys.stderr)
 
 
 if __name__ == "__main__":

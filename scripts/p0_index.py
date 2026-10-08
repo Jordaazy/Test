@@ -21,7 +21,8 @@ import yt_dlp
 ROOT = Path(__file__).resolve().parent.parent
 META_DIR = ROOT / "data" / "meta"
 INDEX_CSV = ROOT / "data" / "index.csv"
-TABS = {"videos": "video", "shorts": "short", "streams": "live"}
+# Ordre = priorité de traitement : vidéos longues, puis lives, puis shorts.
+TABS = {"videos": "video", "streams": "live", "shorts": "short"}
 
 # Champs conservés dans data/meta/<id>.json (on jette les formats, très lourds).
 KEEP = [
@@ -74,7 +75,33 @@ def list_ids(args):
                                       "duration": e.get("duration"), "view_count": e.get("view_count")}
                     n += 1
             print(f"[index] onglet {tab}: {n} vidéos", file=sys.stderr)
-    return found
+    # YouTube coupe parfois la pagination (403/429) : on ne perd pas les vidéos déjà indexées.
+    kept = 0
+    for vid, flat in load_index().items():
+        if vid not in found:
+            found[vid] = flat
+            kept += 1
+    if kept:
+        print(f"[index] {kept} vidéos absentes de la liste actuelle conservées depuis l'index précédent",
+              file=sys.stderr)
+    return by_priority(found)
+
+
+def by_priority(found):
+    """Vidéos longues, puis lives, puis shorts ; dans chaque type, de la plus récente à la plus ancienne."""
+    prio = {t: i for i, t in enumerate(TABS.values())}
+    return dict(sorted(found.items(), key=lambda kv: (prio[kv[1]["type"]], kv[1]["tab_rank"])))
+
+
+def load_index():
+    if not INDEX_CSV.exists():
+        return {}
+    found = {}
+    for r in csv.DictReader(INDEX_CSV.open(encoding="utf-8")):
+        found[r["video_id"]] = {"type": r["type"], "tab_rank": int(r["tab_rank"] or 0), "title": r["title"],
+                                "duration": int(float(r["duration_s"])) if r["duration_s"] else None,
+                                "view_count": r["view_count"]}
+    return by_priority(found)
 
 
 def fetch_meta(vid, args):
@@ -106,10 +133,12 @@ def main():
     ap.add_argument("--sleep", type=float, default=1.0)
     ap.add_argument("--limit", type=int, default=None,
                     help="ne récupère les métadonnées complètes que des N vidéos les plus récentes (test)")
+    ap.add_argument("--no-list", action="store_true",
+                    help="réutilise data/index.csv au lieu de relister la chaîne (avec --limit 0 : aucune requête)")
     args = ap.parse_args()
 
     META_DIR.mkdir(parents=True, exist_ok=True)
-    ids = list_ids(args)
+    ids = list_ids(args) if not (args.no_list and INDEX_CSV.exists()) else load_index()
     if not ids:
         sys.exit("[index] aucune vidéo trouvée (accès YouTube ?)")
 
@@ -158,7 +187,8 @@ def main():
         w.writeheader()
         w.writerows(rows)
     print(f"[index] {len(rows)} vidéos -> {INDEX_CSV.relative_to(ROOT)} ; "
-          f"sans métadonnées complètes : {len(failed)}", file=sys.stderr)
+          f"sans métadonnées complètes : {sum(r['meta'] == 'flat-only' for r in rows)} "
+          f"(dont {len(failed)} échecs pendant cette exécution)", file=sys.stderr)
 
 
 if __name__ == "__main__":

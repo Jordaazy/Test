@@ -1,0 +1,4171 @@
+{
+"video_id": "6jM0S5_Um9M",
+"title": "This Simple Scalping Strategy Makes Me Over $30,000/Month",
+"date": "2026-06-09",
+"url": "https://www.youtube.com/watch?v=6jM0S5_Um9M",
+"sub_lang": "en-orig",
+"sub_kind": "auto",
+"sub_note": "asr-orig",
+"segments": [
+{
+"start": 0.0,
+"end": 2.64,
+"text": "Most traders lose their prop firm"
+},
+{
+"start": 1.16,
+"end": 4.0,
+"text": "accounts not because they can't trade,"
+},
+{
+"start": 2.64,
+"end": 5.8,
+"text": "but because they're trading the wrong"
+},
+{
+"start": 4.0,
+"end": 7.4,
+"text": "game entirely. I'm Amoss. I've been"
+},
+{
+"start": 5.8,
+"end": 10.04,
+"text": "trading for 4 years now, and in that"
+},
+{
+"start": 7.4,
+"end": 11.68,
+"text": "time, I've pulled over $200,000 in prop"
+},
+{
+"start": 10.04,
+"end": 13.44,
+"text": "firm payouts. Not by swinging for home"
+},
+{
+"start": 11.68,
+"end": 15.76,
+"text": "runs, not by risking everything on one"
+},
+{
+"start": 13.44,
+"end": 17.2,
+"text": "setup, but by running a dead simple 1:1"
+},
+{
+"start": 15.76,
+"end": 19.24,
+"text": "risk-to-reward system that keeps my"
+},
+{
+"start": 17.2,
+"end": 20.48,
+"text": "equity curve moving in one direction."
+},
+{
+"start": 19.24,
+"end": 22.64,
+"text": "What I'm going to show you in this video"
+},
+{
+"start": 20.48,
+"end": 24.44,
+"text": "is the exact model I use, the unfilled"
+},
+{
+"start": 22.64,
+"end": 26.2,
+"text": "fair value gap model. A framework I've"
+},
+{
+"start": 24.44,
+"end": 28.4,
+"text": "built specifically around how prop firm"
+},
+{
+"start": 26.2,
+"end": 30.0,
+"text": "environments work, how they punish you,"
+},
+{
+"start": 28.4,
+"end": 31.72,
+"text": "and how they reward you. If you've been"
+},
+{
+"start": 30.0,
+"end": 33.56,
+"text": "failing challenges, busting funded"
+},
+{
+"start": 31.72,
+"end": 34.92,
+"text": "accounts, or just spinning your wheels,"
+},
+{
+"start": 33.56,
+"end": 36.64,
+"text": "this video is going to change how you"
+},
+{
+"start": 34.92,
+"end": 39.32,
+"text": "see it. Let's get into it. And the first"
+},
+{
+"start": 36.64,
+"end": 41.2,
+"text": "step is you want to find an unfilled"
+},
+{
+"start": 39.32,
+"end": 43.24,
+"text": "fair value gap being created on either"
+},
+{
+"start": 41.2,
+"end": 45.36,
+"text": "the 15-minute chart or the hourly chart."
+},
+{
+"start": 43.24,
+"end": 47.12,
+"text": "Just below us, we have this price action"
+},
+{
+"start": 45.36,
+"end": 48.88,
+"text": "on the 15-minute chart, and we can see"
+},
+{
+"start": 47.12,
+"end": 50.36,
+"text": "that a fair value gap got created. What"
+},
+{
+"start": 48.88,
+"end": 52.84,
+"text": "is a fair value gap? A bearish fair"
+},
+{
+"start": 50.36,
+"end": 54.96,
+"text": "value gap is when the first candle's"
+},
+{
+"start": 52.84,
+"end": 56.76,
+"text": "down wick doesn't touch the third"
+},
+{
+"start": 54.96,
+"end": 58.28,
+"text": "candle's up wick. That tells us that"
+},
+{
+"start": 56.76,
+"end": 60.48,
+"text": "sellers were so aggressive within the"
+},
+{
+"start": 58.28,
+"end": 62.12,
+"text": "previous range that buyers did not get a"
+},
+{
+"start": 60.48,
+"end": 64.24,
+"text": "fair exchange. It gives us a good"
+},
+{
+"start": 62.12,
+"end": 66.32,
+"text": "information about the volume traded"
+},
+{
+"start": 64.24,
+"end": 67.64,
+"text": "within the last 45 minutes. The thing"
+},
+{
+"start": 66.32,
+"end": 69.24,
+"text": "that I like about this strategy is that"
+},
+{
+"start": 67.64,
+"end": 71.68,
+"text": "we are not trading like other traders."
+},
+{
+"start": 69.24,
+"end": 73.8,
+"text": "We have our own framework, and usually"
+},
+{
+"start": 71.68,
+"end": 75.96,
+"text": "people will sell within this fair value"
+},
+{
+"start": 73.8,
+"end": 78.32,
+"text": "gap predicting that price will create"
+},
+{
+"start": 75.96,
+"end": 80.16,
+"text": "new lows just because sellers stepped in"
+},
+{
+"start": 78.32,
+"end": 82.72,
+"text": "within the last 45 minutes and created"
+},
+{
+"start": 80.16,
+"end": 84.72,
+"text": "that gap. But for me, I like to scalp"
+},
+{
+"start": 82.72,
+"end": 87.04,
+"text": "the move back towards that unfilled fair"
+},
+{
+"start": 84.72,
+"end": 89.0,
+"text": "value gap and look for a quick 1:1"
+},
+{
+"start": 87.04,
+"end": 90.96,
+"text": "risk-to-reward for 20 to 35 points"
+},
+{
+"start": 89.0,
+"end": 92.64,
+"text": "consistently. Second step is I want to"
+},
+{
+"start": 90.96,
+"end": 94.84,
+"text": "make sure that the candle number three"
+},
+{
+"start": 92.64,
+"end": 96.56,
+"text": "fails to close below the low of candle"
+},
+{
+"start": 94.84,
+"end": 98.64,
+"text": "number two. What does that mean? A fair"
+},
+{
+"start": 96.56,
+"end": 101.36,
+"text": "value gap is a three-candle pattern. And"
+},
+{
+"start": 98.64,
+"end": 104.12,
+"text": "here is the first candle, this one right"
+},
+{
+"start": 101.36,
+"end": 106.48,
+"text": "there is the second,"
+},
+{
+"start": 104.12,
+"end": 108.08,
+"text": "and this one is the third. Within this"
+},
+{
+"start": 106.48,
+"end": 110.32,
+"text": "three-candle pattern, I want to make"
+},
+{
+"start": 108.08,
+"end": 112.48,
+"text": "sure that when I create a bearish fair"
+},
+{
+"start": 110.32,
+"end": 114.52,
+"text": "value gap, the third candle failed to"
+},
+{
+"start": 112.48,
+"end": 116.52,
+"text": "close below the second candle's low. And"
+},
+{
+"start": 114.52,
+"end": 118.76,
+"text": "once I have this, I know that responsive"
+},
+{
+"start": 116.52,
+"end": 120.28,
+"text": "buyers actually stepped in and are ready"
+},
+{
+"start": 118.76,
+"end": 121.8,
+"text": "to see the move back towards the"
+},
+{
+"start": 120.28,
+"end": 123.76,
+"text": "unfilled fair value gap. When the first"
+},
+{
+"start": 121.8,
+"end": 125.72,
+"text": "two steps are respected, now I can look"
+},
+{
+"start": 123.76,
+"end": 127.0,
+"text": "for my entry and then I can scale down"
+},
+{
+"start": 125.72,
+"end": 128.72,
+"text": "to the 1-minute chart. What are my"
+},
+{
+"start": 127.0,
+"end": 131.24,
+"text": "entries? It's either an inversion fair"
+},
+{
+"start": 128.72,
+"end": 132.6,
+"text": "value gap, so meaning that price sold"
+},
+{
+"start": 131.24,
+"end": 134.36,
+"text": "off very aggressively within the"
+},
+{
+"start": 132.6,
+"end": 136.4,
+"text": "previous candle, created a bearish fair"
+},
+{
+"start": 134.36,
+"end": 137.84,
+"text": "value gap. If we were truly bearish, we"
+},
+{
+"start": 136.4,
+"end": 139.56,
+"text": "should have held this gap in order to"
+},
+{
+"start": 137.84,
+"end": 141.76,
+"text": "create new lows, but we're not going to"
+},
+{
+"start": 139.56,
+"end": 144.44,
+"text": "hold this gap. We will disrespect it and"
+},
+{
+"start": 141.76,
+"end": 146.48,
+"text": "long from it back towards the unfilled"
+},
+{
+"start": 144.44,
+"end": 149.28,
+"text": "15-minute gap. This would be the first"
+},
+{
+"start": 146.48,
+"end": 150.96,
+"text": "entry and the second entry would be a"
+},
+{
+"start": 149.28,
+"end": 152.72,
+"text": "change in the state of delivery or what"
+},
+{
+"start": 150.96,
+"end": 155.96,
+"text": "we call a breaker block. So, we would"
+},
+{
+"start": 152.72,
+"end": 157.92,
+"text": "need a low, high, lower low,"
+},
+{
+"start": 155.96,
+"end": 160.72,
+"text": "higher high, and then use this break of"
+},
+{
+"start": 157.92,
+"end": 162.36,
+"text": "structure in order to long from it to"
+},
+{
+"start": 160.72,
+"end": 164.6,
+"text": "the unfilled fair value gap. This zone"
+},
+{
+"start": 162.36,
+"end": 166.56,
+"text": "right here would be your entry. For this"
+},
+{
+"start": 164.6,
+"end": 168.52,
+"text": "strategy, we're going to be using a 1:1"
+},
+{
+"start": 166.56,
+"end": 170.84,
+"text": "risk-to-reward because I believe this is"
+},
+{
+"start": 168.52,
+"end": 172.76,
+"text": "by far the best way to stay profitable"
+},
+{
+"start": 170.84,
+"end": 175.24,
+"text": "and to become profitable because easy"
+},
+{
+"start": 172.76,
+"end": 176.4,
+"text": "money trades make trading careers, not"
+},
+{
+"start": 175.24,
+"end": 178.0,
+"text": "home runs. We're also going to be"
+},
+{
+"start": 176.4,
+"end": 179.72,
+"text": "focused on taking one trade a day"
+},
+{
+"start": 178.0,
+"end": 181.08,
+"text": "because we want to live to trade another"
+},
+{
+"start": 179.72,
+"end": 183.04,
+"text": "day and we don't want to flip our"
+},
+{
+"start": 181.08,
+"end": 184.76,
+"text": "accounts in 1 month. Now, let me show"
+},
+{
+"start": 183.04,
+"end": 186.56,
+"text": "you an example of how I trade it in real"
+},
+{
+"start": 184.76,
+"end": 188.6,
+"text": "time. We can see here we have the candle"
+},
+{
+"start": 186.56,
+"end": 191.56,
+"text": "number one and candle number two that"
+},
+{
+"start": 188.6,
+"end": 193.56,
+"text": "got created and this next 15-minute"
+},
+{
+"start": 191.56,
+"end": 195.24,
+"text": "candle is going to tell us the story of"
+},
+{
+"start": 193.56,
+"end": 198.28,
+"text": "if price has more chances of going to"
+},
+{
+"start": 195.24,
+"end": 200.44,
+"text": "the upside or to the downside. And here,"
+},
+{
+"start": 198.28,
+"end": 201.88,
+"text": "if we fail to close below this second"
+},
+{
+"start": 200.44,
+"end": 204.32,
+"text": "candle's low here and we close back"
+},
+{
+"start": 201.88,
+"end": 206.48,
+"text": "within the range, we also have an good"
+},
+{
+"start": 204.32,
+"end": 208.36,
+"text": "entry model like the inversion gap or"
+},
+{
+"start": 206.48,
+"end": 210.48,
+"text": "the breaker block, then I will be"
+},
+{
+"start": 208.36,
+"end": 212.08,
+"text": "tempted to long back towards the"
+},
+{
+"start": 210.48,
+"end": 213.48,
+"text": "unfilled fair value gap, okay? I just"
+},
+{
+"start": 212.08,
+"end": 214.76,
+"text": "scaled down to the 1-minute chart and as"
+},
+{
+"start": 213.48,
+"end": 216.56,
+"text": "you guys can see here, we have an"
+},
+{
+"start": 214.76,
+"end": 218.4,
+"text": "indicator showing us the last four"
+},
+{
+"start": 216.56,
+"end": 220.28,
+"text": "15-minute candles printing within the"
+},
+{
+"start": 218.4,
+"end": 222.52,
+"text": "range. Now, my job is to wait for the"
+},
+{
+"start": 220.28,
+"end": 224.68,
+"text": "new 15-minute candle to open and make"
+},
+{
+"start": 222.52,
+"end": 226.52,
+"text": "sure that we are not closing below the"
+},
+{
+"start": 224.68,
+"end": 228.56,
+"text": "second candle's low here and we have an"
+},
+{
+"start": 226.52,
+"end": 230.8,
+"text": "unfilled gap above us, so I can target"
+},
+{
+"start": 228.56,
+"end": 232.6,
+"text": "that as my drawing liquidity. So, now"
+},
+{
+"start": 230.8,
+"end": 234.68,
+"text": "the new candle just opened up. We drove"
+},
+{
+"start": 232.6,
+"end": 236.8,
+"text": "down aggressively"
+},
+{
+"start": 234.68,
+"end": 238.68,
+"text": "and then we started to pump back to the"
+},
+{
+"start": 236.8,
+"end": 240.8,
+"text": "upside creating a breaker block. Right"
+},
+{
+"start": 238.68,
+"end": 243.52,
+"text": "here, one thing to note is that I look"
+},
+{
+"start": 240.8,
+"end": 245.68,
+"text": "at cues of price, but I also look at"
+},
+{
+"start": 243.52,
+"end": 248.0,
+"text": "cues of time, okay? And for me to be"
+},
+{
+"start": 245.68,
+"end": 250.08,
+"text": "profitable, I need to combine them both"
+},
+{
+"start": 248.0,
+"end": 253.64,
+"text": "and align price with time. What does"
+},
+{
+"start": 250.08,
+"end": 255.6,
+"text": "that mean? Here, it is 9:52, meaning"
+},
+{
+"start": 253.64,
+"end": 258.12,
+"text": "that there is still 8 minutes left for"
+},
+{
+"start": 255.6,
+"end": 259.76,
+"text": "that 15-minute bar to close. So, here"
+},
+{
+"start": 258.12,
+"end": 261.48,
+"text": "entering longs would be a little bit too"
+},
+{
+"start": 259.76,
+"end": 263.08,
+"text": "premature because we don't know how that"
+},
+{
+"start": 261.48,
+"end": 265.4,
+"text": "candle will actually close. It could"
+},
+{
+"start": 263.08,
+"end": 266.84,
+"text": "actually form a top here and then close"
+},
+{
+"start": 265.4,
+"end": 270.0,
+"text": "below the second candle's low, which"
+},
+{
+"start": 266.84,
+"end": 271.84,
+"text": "would make us enter a bad trade. So, we"
+},
+{
+"start": 270.0,
+"end": 273.6,
+"text": "need to wait till later within that"
+},
+{
+"start": 271.84,
+"end": 276.32,
+"text": "15-minute candle to make sure that it's"
+},
+{
+"start": 273.6,
+"end": 280.04,
+"text": "going to actually close above the second"
+},
+{
+"start": 276.32,
+"end": 285.04,
+"text": "candle's low. So, now let's wait"
+},
+{
+"start": 280.04,
+"end": 287.76,
+"text": "for cues of time. It's 55, 56, 57."
+},
+{
+"start": 285.04,
+"end": 289.64,
+"text": "And now I have a good understanding of"
+},
+{
+"start": 287.76,
+"end": 292.64,
+"text": "the likelihood of this candle actually"
+},
+{
+"start": 289.64,
+"end": 294.44,
+"text": "closing back within the range of candle"
+},
+{
+"start": 292.64,
+"end": 296.52,
+"text": "number two, sorry, and actually forming"
+},
+{
+"start": 294.44,
+"end": 298.76,
+"text": "an unfilled gap above us. Once I have"
+},
+{
+"start": 296.52,
+"end": 300.68,
+"text": "this information, I need to get prepared"
+},
+{
+"start": 298.76,
+"end": 303.36,
+"text": "for potential long opportunity because I"
+},
+{
+"start": 300.68,
+"end": 305.4,
+"text": "know I have more chances of seeing that"
+},
+{
+"start": 303.36,
+"end": 307.96,
+"text": "candle actually respecting the framework"
+},
+{
+"start": 305.4,
+"end": 310.16,
+"text": "than not. So, now I will look for cues"
+},
+{
+"start": 307.96,
+"end": 312.12,
+"text": "of longs. I have a fair value gap being"
+},
+{
+"start": 310.16,
+"end": 313.84,
+"text": "created right here. I actually have my"
+},
+{
+"start": 312.12,
+"end": 316.52,
+"text": "breaker block being formed. We could"
+},
+{
+"start": 313.84,
+"end": 318.12,
+"text": "react it basically at any moment. So, at"
+},
+{
+"start": 316.52,
+"end": 320.16,
+"text": "this point, I will put a limit order"
+},
+{
+"start": 318.12,
+"end": 321.88,
+"text": "right there."
+},
+{
+"start": 320.16,
+"end": 323.76,
+"text": "Got filled. I'm going to put my stop"
+},
+{
+"start": 321.88,
+"end": 325.48,
+"text": "loss right below this candle's low, and"
+},
+{
+"start": 323.76,
+"end": 327.72,
+"text": "I'm going to put my take profit at a"
+},
+{
+"start": 325.48,
+"end": 330.04,
+"text": "one-to-one risk-to-reward back within"
+},
+{
+"start": 327.72,
+"end": 331.48,
+"text": "the unfilled fair value gap."
+},
+{
+"start": 330.04,
+"end": 333.84,
+"text": "So, then"
+},
+{
+"start": 331.48,
+"end": 335.92,
+"text": "in few minutes, I hit my target. So, the"
+},
+{
+"start": 333.84,
+"end": 337.6,
+"text": "long opportunity was"
+},
+{
+"start": 335.92,
+"end": 339.92,
+"text": "from this fair value gap, stop loss"
+},
+{
+"start": 337.6,
+"end": 341.64,
+"text": "right here, take profit at a one-to-one."
+},
+{
+"start": 339.92,
+"end": 344.0,
+"text": "But, you can see here, as soon as the"
+},
+{
+"start": 341.64,
+"end": 347.2,
+"text": "gap gets created, as soon as this candle"
+},
+{
+"start": 344.0,
+"end": 349.44,
+"text": "closes, we enter the gap for a quick"
+},
+{
+"start": 347.2,
+"end": 351.52,
+"text": "one-to-one. This is the scalp model. I"
+},
+{
+"start": 349.44,
+"end": 353.64,
+"text": "want to make sure that I scalp unfilled"
+},
+{
+"start": 351.52,
+"end": 356.24,
+"text": "gaps as soon as they're being created"
+},
+{
+"start": 353.64,
+"end": 359.84,
+"text": "instead of just using them as an entry"
+},
+{
+"start": 356.24,
+"end": 361.28,
+"text": "uh for a short. This is on May 1st and I"
+},
+{
+"start": 359.84,
+"end": 365.04,
+"text": "am going to be using this indicator"
+},
+{
+"start": 361.28,
+"end": 367.08,
+"text": "called ICT HTF candles by Fadi and this"
+},
+{
+"start": 365.04,
+"end": 369.2,
+"text": "indicator will show me"
+},
+{
+"start": 367.08,
+"end": 371.84,
+"text": "the last four 15-minute candles or the"
+},
+{
+"start": 369.2,
+"end": 373.32,
+"text": "last four hourly candles in the chart."
+},
+{
+"start": 371.84,
+"end": 376.56,
+"text": "So, I can just stare at the 1-minute"
+},
+{
+"start": 373.32,
+"end": 378.44,
+"text": "chart having this right here showing me"
+},
+{
+"start": 376.56,
+"end": 380.96,
+"text": "how the 15-minute candles are actually"
+},
+{
+"start": 378.44,
+"end": 384.04,
+"text": "fluctuating and closing so I know I have"
+},
+{
+"start": 380.96,
+"end": 386.64,
+"text": "a gap above or below me. So, here we can"
+},
+{
+"start": 384.04,
+"end": 388.36,
+"text": "see this is the last four 15-minute bars"
+},
+{
+"start": 386.64,
+"end": 390.72,
+"text": "and this one is currently fluctuating."
+},
+{
+"start": 388.36,
+"end": 392.44,
+"text": "We displaced below the first candle's"
+},
+{
+"start": 390.72,
+"end": 394.92,
+"text": "down wick. I know that I could"
+},
+{
+"start": 392.44,
+"end": 397.08,
+"text": "potentially have a trade if this third"
+},
+{
+"start": 394.92,
+"end": 399.12,
+"text": "candle right here fails to close below"
+},
+{
+"start": 397.08,
+"end": 400.76,
+"text": "the second candle's low and we close"
+},
+{
+"start": 399.12,
+"end": 403.0,
+"text": "back within the range having a good"
+},
+{
+"start": 400.76,
+"end": 405.52,
+"text": "entry model, then I would predict that"
+},
+{
+"start": 403.0,
+"end": 407.28,
+"text": "the next bar would be bullish back into"
+},
+{
+"start": 405.52,
+"end": 409.0,
+"text": "the unfilled fair value gap. So, let's"
+},
+{
+"start": 407.28,
+"end": 410.6,
+"text": "see what happened right there."
+},
+{
+"start": 409.0,
+"end": 412.24,
+"text": "All right, so we're seeing this third"
+},
+{
+"start": 410.6,
+"end": 414.04,
+"text": "candle sweeping the previous candle's"
+},
+{
+"start": 412.24,
+"end": 416.4,
+"text": "low. We need to make sure that the"
+},
+{
+"start": 414.04,
+"end": 418.76,
+"text": "candle number three fails to close below"
+},
+{
+"start": 416.4,
+"end": 420.64,
+"text": "candle number two and we need to look"
+},
+{
+"start": 418.76,
+"end": 422.84,
+"text": "for cues of time also. We're breaking"
+},
+{
+"start": 420.64,
+"end": 425.12,
+"text": "structure right here, but I'm still not"
+},
+{
+"start": 422.84,
+"end": 426.52,
+"text": "sure that the candle number three will"
+},
+{
+"start": 425.12,
+"end": 428.8,
+"text": "close back within the range of candle"
+},
+{
+"start": 426.52,
+"end": 431.04,
+"text": "number two. So, I need to make sure that"
+},
+{
+"start": 428.8,
+"end": 432.88,
+"text": "this will happen. This right here is my"
+},
+{
+"start": 431.04,
+"end": 435.44,
+"text": "confirmation. There is only 1 minute"
+},
+{
+"start": 432.88,
+"end": 437.92,
+"text": "left for that 15-minute candle to close."
+},
+{
+"start": 435.44,
+"end": 440.68,
+"text": "We respected that order block. We pushed"
+},
+{
+"start": 437.92,
+"end": 443.52,
+"text": "to the upside very aggressively. So, now"
+},
+{
+"start": 440.68,
+"end": 446.36,
+"text": "I will actually enter here."
+},
+{
+"start": 443.52,
+"end": 448.56,
+"text": "Mark it with my stop loss below this"
+},
+{
+"start": 446.36,
+"end": 450.4,
+"text": "internal low targeting the unfilled fair"
+},
+{
+"start": 448.56,
+"end": 452.76,
+"text": "value gap for a one-to-one risk to"
+},
+{
+"start": 450.4,
+"end": 455.52,
+"text": "reward right here. So, why did I enter"
+},
+{
+"start": 452.76,
+"end": 457.6,
+"text": "at uh 2:50 p.m.? It's because there's"
+},
+{
+"start": 455.52,
+"end": 459.4,
+"text": "only 1 minute left for that 15-minute"
+},
+{
+"start": 457.6,
+"end": 461.72,
+"text": "candle to close. If I don't enter right"
+},
+{
+"start": 459.4,
+"end": 463.68,
+"text": "here, then I could be forced to be in a"
+},
+{
+"start": 461.72,
+"end": 465.84,
+"text": "negative risk to reward scenario. So,"
+},
+{
+"start": 463.68,
+"end": 468.32,
+"text": "this is a very, very good trade if the"
+},
+{
+"start": 465.84,
+"end": 471.2,
+"text": "next bar ends up being a down close"
+},
+{
+"start": 468.32,
+"end": 473.24,
+"text": "candle and actually that 15-minute"
+},
+{
+"start": 471.2,
+"end": 475.68,
+"text": "candle closes below the second candle's"
+},
+{
+"start": 473.24,
+"end": 477.64,
+"text": "low, I will take a super small loss."
+},
+{
+"start": 475.68,
+"end": 478.64,
+"text": "Okay, this is how I operate. We can see"
+},
+{
+"start": 477.64,
+"end": 481.04,
+"text": "here"
+},
+{
+"start": 478.64,
+"end": 482.84,
+"text": "every rule is being respected so far. We"
+},
+{
+"start": 481.04,
+"end": 485.0,
+"text": "have an unfilled 15-minute fair value"
+},
+{
+"start": 482.84,
+"end": 486.52,
+"text": "gap right above us showing us that the"
+},
+{
+"start": 485.0,
+"end": 488.6,
+"text": "sellers were so aggressive within the"
+},
+{
+"start": 486.52,
+"end": 490.84,
+"text": "previous range that buyers did not get a"
+},
+{
+"start": 488.6,
+"end": 492.8,
+"text": "fair exchange. So, now this area becomes"
+},
+{
+"start": 490.84,
+"end": 494.12,
+"text": "an area with low volume and for the"
+},
+{
+"start": 492.8,
+"end": 496.04,
+"text": "market to be efficient, we need to"
+},
+{
+"start": 494.12,
+"end": 499.6,
+"text": "retrace back towards that unfilled fair"
+},
+{
+"start": 496.04,
+"end": 501.28,
+"text": "value gap to find fair value. Then, I"
+},
+{
+"start": 499.6,
+"end": 503.36,
+"text": "I also made sure that the candle number"
+},
+{
+"start": 501.28,
+"end": 506.64,
+"text": "three failed to close below candle"
+},
+{
+"start": 503.36,
+"end": 508.56,
+"text": "number two and also we have a good entry"
+},
+{
+"start": 506.64,
+"end": 510.88,
+"text": "model which is the order block. So,"
+},
+{
+"start": 508.56,
+"end": 512.68,
+"text": "high, low, higher high"
+},
+{
+"start": 510.88,
+"end": 514.56,
+"text": "using this block in order to predict"
+},
+{
+"start": 512.68,
+"end": 517.52,
+"text": "higher prices. Okay, let's see how that"
+},
+{
+"start": 514.56,
+"end": 519.36,
+"text": "goes. And as you guys can see in 4"
+},
+{
+"start": 517.52,
+"end": 522.24,
+"text": "minutes we hit the target. So, right"
+},
+{
+"start": 519.36,
+"end": 524.88,
+"text": "here you can see as"
+},
+{
+"start": 522.24,
+"end": 527.48,
+"text": "candle closes and we create the gap"
+},
+{
+"start": 524.88,
+"end": 530.28,
+"text": "we have a nice move back towards the"
+},
+{
+"start": 527.48,
+"end": 532.04,
+"text": "inefficiency. This is exactly the scalp"
+},
+{
+"start": 530.28,
+"end": 534.56,
+"text": "model that I'm trying to teach"
+},
+{
+"start": 532.04,
+"end": 536.44,
+"text": "to scalp unfilled fair value gaps as"
+},
+{
+"start": 534.56,
+"end": 538.84,
+"text": "soon as they're being created instead of"
+},
+{
+"start": 536.44,
+"end": 541.04,
+"text": "using them as an entry model to predict"
+},
+{
+"start": 538.84,
+"end": 542.76,
+"text": "future prices. You're using them as an"
+},
+{
+"start": 541.04,
+"end": 545.28,
+"text": "exit. Let's take a look at scenario"
+},
+{
+"start": 542.76,
+"end": 547.88,
+"text": "number two which happened on May 4th and"
+},
+{
+"start": 545.28,
+"end": 550.12,
+"text": "this is actually an unfilled fair value"
+},
+{
+"start": 547.88,
+"end": 552.48,
+"text": "gap being created on the hourly chart."
+},
+{
+"start": 550.12,
+"end": 554.24,
+"text": "Okay, so to make sure that you guys"
+},
+{
+"start": 552.48,
+"end": 556.56,
+"text": "understand time frame alignment, if I"
+},
+{
+"start": 554.24,
+"end": 558.84,
+"text": "have a 15-minute unfilled fair value"
+},
+{
+"start": 556.56,
+"end": 561.04,
+"text": "gap, I would be looking for a 1-minute"
+},
+{
+"start": 558.84,
+"end": 562.4,
+"text": "entry. Okay, but if I have an hourly"
+},
+{
+"start": 561.04,
+"end": 564.4,
+"text": "unfilled fair value gap, I would be"
+},
+{
+"start": 562.4,
+"end": 566.96,
+"text": "looking for a 5-minute entry. Okay, this"
+},
+{
+"start": 564.4,
+"end": 568.64,
+"text": "is very important to have that good time"
+},
+{
+"start": 566.96,
+"end": 571.2,
+"text": "frame alignment because I will not be"
+},
+{
+"start": 568.64,
+"end": 573.08,
+"text": "looking for a 1-minute entry if my"
+},
+{
+"start": 571.2,
+"end": 575.16,
+"text": "framework is being applied on let's say"
+},
+{
+"start": 573.08,
+"end": 577.44,
+"text": "an hourly or a 4-hour chart because"
+},
+{
+"start": 575.16,
+"end": 580.12,
+"text": "those are going to fake you out way way"
+},
+{
+"start": 577.44,
+"end": 581.88,
+"text": "too much, okay? So, here"
+},
+{
+"start": 580.12,
+"end": 583.64,
+"text": "as soon as this candle will close, we"
+},
+{
+"start": 581.88,
+"end": 585.64,
+"text": "can see we have cues that we are most"
+},
+{
+"start": 583.64,
+"end": 587.92,
+"text": "likely going to create a gap if candle"
+},
+{
+"start": 585.64,
+"end": 590.72,
+"text": "number three fails to close below candle"
+},
+{
+"start": 587.92,
+"end": 592.24,
+"text": "number two, okay? You can see we open up"
+},
+{
+"start": 590.72,
+"end": 595.08,
+"text": "right there."
+},
+{
+"start": 592.24,
+"end": 596.96,
+"text": "We drive down lower, and at that point"
+},
+{
+"start": 595.08,
+"end": 598.84,
+"text": "we can see that the second candle was a"
+},
+{
+"start": 596.96,
+"end": 600.4,
+"text": "displacement candle. When I see a"
+},
+{
+"start": 598.84,
+"end": 602.84,
+"text": "displacement candle on the second"
+},
+{
+"start": 600.4,
+"end": 605.28,
+"text": "candle, I know I have a potential"
+},
+{
+"start": 602.84,
+"end": 606.96,
+"text": "unfilled for value gap scenario. Now, I"
+},
+{
+"start": 605.28,
+"end": 609.2,
+"text": "need to make sure I have a gap above me,"
+},
+{
+"start": 606.96,
+"end": 611.88,
+"text": "so we I never trade back to the first"
+},
+{
+"start": 609.2,
+"end": 613.88,
+"text": "candle's down wick. I also have the"
+},
+{
+"start": 611.88,
+"end": 616.2,
+"text": "candle number three failing to close"
+},
+{
+"start": 613.88,
+"end": 618.92,
+"text": "below the second candle right here, and"
+},
+{
+"start": 616.2,
+"end": 620.36,
+"text": "I actually have a good entry, which is a"
+},
+{
+"start": 618.92,
+"end": 621.92,
+"text": "inversion for value gap, a breaker"
+},
+{
+"start": 620.36,
+"end": 623.8,
+"text": "block, an order block, any sorts of"
+},
+{
+"start": 621.92,
+"end": 625.84,
+"text": "aggression and breaks of structures to"
+},
+{
+"start": 623.8,
+"end": 627.52,
+"text": "the upside. Okay, and then I'm going to"
+},
+{
+"start": 625.84,
+"end": 629.4,
+"text": "be playing with my one to one."
+},
+{
+"start": 627.52,
+"end": 631.76,
+"text": "Right there, I'm actually also going to"
+},
+{
+"start": 629.4,
+"end": 633.56,
+"text": "look for cues of time. So, we have that"
+},
+{
+"start": 631.76,
+"end": 635.32,
+"text": "inversion for value gap being formed"
+},
+{
+"start": 633.56,
+"end": 638.32,
+"text": "right at the beginning of that hourly"
+},
+{
+"start": 635.32,
+"end": 640.6,
+"text": "candle opening. So, is that a good"
+},
+{
+"start": 638.32,
+"end": 642.92,
+"text": "entry? No, it is too much of a"
+},
+{
+"start": 640.6,
+"end": 644.52,
+"text": "prediction. There is still 40 minutes"
+},
+{
+"start": 642.92,
+"end": 646.32,
+"text": "left for that hourly bar to close."
+},
+{
+"start": 644.52,
+"end": 648.16,
+"text": "Anything can happen within the next 40"
+},
+{
+"start": 646.32,
+"end": 650.48,
+"text": "minutes. Even if you enter here, in my"
+},
+{
+"start": 648.16,
+"end": 652.16,
+"text": "opinion, it is a very bad trade. So, you"
+},
+{
+"start": 650.48,
+"end": 653.8,
+"text": "need to make sure that this candle"
+},
+{
+"start": 652.16,
+"end": 656.8,
+"text": "closes in the way that it's doing right"
+},
+{
+"start": 653.8,
+"end": 658.48,
+"text": "now, which you need cues of time, okay?"
+},
+{
+"start": 656.8,
+"end": 660.56,
+"text": "You need to wait for that hourly candle"
+},
+{
+"start": 658.48,
+"end": 661.96,
+"text": "to actually distribute and show us that"
+},
+{
+"start": 660.56,
+"end": 663.4,
+"text": "the buyers are"
+},
+{
+"start": 661.96,
+"end": 664.68,
+"text": "controlling the market within that"
+},
+{
+"start": 663.4,
+"end": 668.72,
+"text": "hourly bar."
+},
+{
+"start": 664.68,
+"end": 671.36,
+"text": "So, here it is currently 12:45 p.m. We"
+},
+{
+"start": 668.72,
+"end": 674.04,
+"text": "still have some very, very good"
+},
+{
+"start": 671.36,
+"end": 677.84,
+"text": "confirmation so far."
+},
+{
+"start": 674.04,
+"end": 679.04,
+"text": "And here, 12:50, okay? But, if I'm on"
+},
+{
+"start": 677.84,
+"end": 681.44,
+"text": "the 5-minute chart right here, you can"
+},
+{
+"start": 679.04,
+"end": 683.96,
+"text": "see it's 12:54 on the 1-minute right"
+},
+{
+"start": 681.44,
+"end": 686.68,
+"text": "here, and it is There's only 5 minutes"
+},
+{
+"start": 683.96,
+"end": 688.64,
+"text": "left for that hourly bar to close."
+},
+{
+"start": 686.68,
+"end": 690.8,
+"text": "We created what kind of structure on the"
+},
+{
+"start": 688.64,
+"end": 692.88,
+"text": "5? We created an inversion for value"
+},
+{
+"start": 690.8,
+"end": 694.8,
+"text": "gap. For me, if we were truly bearish,"
+},
+{
+"start": 692.88,
+"end": 697.28,
+"text": "we should have respected this gap right"
+},
+{
+"start": 694.8,
+"end": 699.4,
+"text": "here in order to create new lows. But,"
+},
+{
+"start": 697.28,
+"end": 701.52,
+"text": "what happened was that in the beginning"
+},
+{
+"start": 699.4,
+"end": 704.12,
+"text": "of that hour, we disrespected it, and we"
+},
+{
+"start": 701.52,
+"end": 706.52,
+"text": "never closed below that inversion gap,"
+},
+{
+"start": 704.12,
+"end": 709.12,
+"text": "showing us that this level is actually"
+},
+{
+"start": 706.52,
+"end": 711.6,
+"text": "uh being held and used as an area of"
+},
+{
+"start": 709.12,
+"end": 713.44,
+"text": "support to potentially see the gap uh"
+},
+{
+"start": 711.6,
+"end": 715.28,
+"text": "being um"
+},
+{
+"start": 713.44,
+"end": 717.52,
+"text": "filled within the next 5 minutes. So,"
+},
+{
+"start": 715.28,
+"end": 719.68,
+"text": "now, since there's only 5 minutes left"
+},
+{
+"start": 717.52,
+"end": 722.4,
+"text": "for that hourly bar to close, I will"
+},
+{
+"start": 719.68,
+"end": 724.84,
+"text": "take a decision to actually enter market"
+},
+{
+"start": 722.4,
+"end": 726.96,
+"text": "right here with my stop loss being right"
+},
+{
+"start": 724.84,
+"end": 728.32,
+"text": "below this candle's low, and my take"
+},
+{
+"start": 726.96,
+"end": 730.2,
+"text": "profit being at a one-to-one"
+},
+{
+"start": 728.32,
+"end": 732.96,
+"text": "risk-to-reward to the upside."
+},
+{
+"start": 730.2,
+"end": 734.92,
+"text": "If in the next 5 minutes, we displace"
+},
+{
+"start": 732.96,
+"end": 737.8,
+"text": "down very aggressively, and we close"
+},
+{
+"start": 734.92,
+"end": 739.8,
+"text": "below the hourly the the second candle's"
+},
+{
+"start": 737.8,
+"end": 741.96,
+"text": "low, basically, I will take a small"
+},
+{
+"start": 739.8,
+"end": 744.6,
+"text": "loss. But, I need to enter in the way uh"
+},
+{
+"start": 741.96,
+"end": 746.56,
+"text": "that I do right now because if not, then"
+},
+{
+"start": 744.6,
+"end": 747.76,
+"text": "I will have a very negative"
+},
+{
+"start": 746.56,
+"end": 750.04,
+"text": "risk-to-reward. So, let's see what"
+},
+{
+"start": 747.76,
+"end": 751.68,
+"text": "happens right here. Are we holding? We"
+},
+{
+"start": 750.04,
+"end": 753.96,
+"text": "did hold, so you could have actually"
+},
+{
+"start": 751.68,
+"end": 754.96,
+"text": "just entered market at the close, and"
+},
+{
+"start": 753.96,
+"end": 757.6,
+"text": "let's take a look at what's going to"
+},
+{
+"start": 754.96,
+"end": 759.76,
+"text": "happen because as soon as this hourly"
+},
+{
+"start": 757.6,
+"end": 762.44,
+"text": "candle will close, something will"
+},
+{
+"start": 759.76,
+"end": 764.08,
+"text": "happen. As soon as you have an unfilled"
+},
+{
+"start": 762.44,
+"end": 766.2,
+"text": "fair value gap right above you,"
+},
+{
+"start": 764.08,
+"end": 768.52,
+"text": "something very important will happen."
+},
+{
+"start": 766.2,
+"end": 770.8,
+"text": "You will have an influx of volatility"
+},
+{
+"start": 768.52,
+"end": 772.76,
+"text": "back towards the gap because this area"
+},
+{
+"start": 770.8,
+"end": 774.48,
+"text": "is an area of low volume, and for the"
+},
+{
+"start": 772.76,
+"end": 776.48,
+"text": "market to be efficient, you need to"
+},
+{
+"start": 774.48,
+"end": 778.84,
+"text": "retrace back towards that unfilled fair"
+},
+{
+"start": 776.48,
+"end": 780.28,
+"text": "value gap as soon as possible."
+},
+{
+"start": 778.84,
+"end": 782.0,
+"text": "Okay, so we have everything that is"
+},
+{
+"start": 780.28,
+"end": 784.52,
+"text": "telling us the price will go up. We"
+},
+{
+"start": 782.0,
+"end": 786.64,
+"text": "entered."
+},
+{
+"start": 784.52,
+"end": 789.08,
+"text": "Next five pushes up."
+},
+{
+"start": 786.64,
+"end": 792.28,
+"text": "Next after also, and then within the"
+},
+{
+"start": 789.08,
+"end": 795.04,
+"text": "next 15 minutes, you can see"
+},
+{
+"start": 792.28,
+"end": 797.28,
+"text": "your trade being onside, and you having"
+},
+{
+"start": 795.04,
+"end": 798.6,
+"text": "the right timing. This is exactly what"
+},
+{
+"start": 797.28,
+"end": 801.2,
+"text": "I'm looking for. I'm not just looking"
+},
+{
+"start": 798.6,
+"end": 802.76,
+"text": "for, okay, sell-side liquidity sweep"
+},
+{
+"start": 801.2,
+"end": 804.52,
+"text": "inversion fair value gap. No, it's not"
+},
+{
+"start": 802.76,
+"end": 807.12,
+"text": "because of that that I took the trade."
+},
+{
+"start": 804.52,
+"end": 809.68,
+"text": "It is because of what happened on the"
+},
+{
+"start": 807.12,
+"end": 812.48,
+"text": "hourly chart. What is the candlestick"
+},
+{
+"start": 809.68,
+"end": 814.32,
+"text": "behavior? Did we wick the low here and"
+},
+{
+"start": 812.48,
+"end": 816.8,
+"text": "showed us that responsive buyers stepped"
+},
+{
+"start": 814.32,
+"end": 818.56,
+"text": "in and that body became super small and"
+},
+{
+"start": 816.8,
+"end": 820.48,
+"text": "we had a gap above us. So now I'm"
+},
+{
+"start": 818.56,
+"end": 821.72,
+"text": "predicting future prices. Quick one, if"
+},
+{
+"start": 820.48,
+"end": 823.36,
+"text": "you're serious about trading, you're"
+},
+{
+"start": 821.72,
+"end": 825.24,
+"text": "going to need a prop firm that you can"
+},
+{
+"start": 823.36,
+"end": 826.84,
+"text": "actually trust. I personally use Trader"
+},
+{
+"start": 825.24,
+"end": 828.32,
+"text": "Five and they're the best in the game,"
+},
+{
+"start": 826.84,
+"end": 829.8,
+"text": "no debate. If you want to support your"
+},
+{
+"start": 828.32,
+"end": 831.32,
+"text": "boy, make sure to use code a master"
+},
+{
+"start": 829.8,
+"end": 833.12,
+"text": "check out for the highest discount"
+},
+{
+"start": 831.32,
+"end": 834.4,
+"text": "available. Links in description. Now"
+},
+{
+"start": 833.12,
+"end": 835.68,
+"text": "let's get back into it. Let's take a"
+},
+{
+"start": 834.4,
+"end": 838.08,
+"text": "look at the trade that happened on"
+},
+{
+"start": 835.68,
+"end": 840.16,
+"text": "Tuesday, May 5th and it is a 15-minute"
+},
+{
+"start": 838.08,
+"end": 843.08,
+"text": "unfilled for valid gap scenario. It was"
+},
+{
+"start": 840.16,
+"end": 846.24,
+"text": "a short. So right here we're seeing this"
+},
+{
+"start": 843.08,
+"end": 847.48,
+"text": "15-minute bar displacing above the first"
+},
+{
+"start": 846.24,
+"end": 849.08,
+"text": "candle's high."
+},
+{
+"start": 847.48,
+"end": 851.48,
+"text": "What do I know? I know that if this"
+},
+{
+"start": 849.08,
+"end": 853.08,
+"text": "third candle fails to close above the"
+},
+{
+"start": 851.48,
+"end": 855.52,
+"text": "second candle's high and we actually"
+},
+{
+"start": 853.08,
+"end": 857.96,
+"text": "have a gap, an unfilled 15-minute gap"
+},
+{
+"start": 855.52,
+"end": 859.44,
+"text": "below us, then my framework is being"
+},
+{
+"start": 857.96,
+"end": 861.32,
+"text": "respected and we have more chances of"
+},
+{
+"start": 859.44,
+"end": 863.04,
+"text": "seeing the gap than the high of that"
+},
+{
+"start": 861.32,
+"end": 865.64,
+"text": "current candle printing. So let's see"
+},
+{
+"start": 863.04,
+"end": 868.0,
+"text": "how that does."
+},
+{
+"start": 865.64,
+"end": 870.32,
+"text": "We push up aggressively"
+},
+{
+"start": 868.0,
+"end": 872.24,
+"text": "forming what? A nice order block. We"
+},
+{
+"start": 870.32,
+"end": 874.84,
+"text": "break structure to the downside very"
+},
+{
+"start": 872.24,
+"end": 876.84,
+"text": "aggressively. So now if we don't trade"
+},
+{
+"start": 874.84,
+"end": 879.32,
+"text": "back towards this candle's up week, we"
+},
+{
+"start": 876.84,
+"end": 882.84,
+"text": "will have an unfilled gap right below us"
+},
+{
+"start": 879.32,
+"end": 884.48,
+"text": "and I will try to short this market."
+},
+{
+"start": 882.84,
+"end": 886.84,
+"text": "So we're pulling back right here. I need"
+},
+{
+"start": 884.48,
+"end": 888.4,
+"text": "to look for how much time there's left"
+},
+{
+"start": 886.84,
+"end": 890.2,
+"text": "for that 15-minute bar to close so I"
+},
+{
+"start": 888.4,
+"end": 892.2,
+"text": "make sure that I'm in a good trade. We"
+},
+{
+"start": 890.2,
+"end": 893.92,
+"text": "pull back very aggressively, doesn't"
+},
+{
+"start": 892.2,
+"end": 896.24,
+"text": "look too strong. So I'm going to wait"
+},
+{
+"start": 893.92,
+"end": 899.56,
+"text": "for a retracement from that area."
+},
+{
+"start": 896.24,
+"end": 901.52,
+"text": "Right here we do have multiple things"
+},
+{
+"start": 899.56,
+"end": 904.44,
+"text": "happening within this chart. We have an"
+},
+{
+"start": 901.52,
+"end": 906.64,
+"text": "order block being formed right here."
+},
+{
+"start": 904.44,
+"end": 908.72,
+"text": "So we broke structure to the downside."
+},
+{
+"start": 906.64,
+"end": 910.28,
+"text": "We actually also have an inversion for"
+},
+{
+"start": 908.72,
+"end": 912.24,
+"text": "valid gap being formed here within the"
+},
+{
+"start": 910.28,
+"end": 915.84,
+"text": "1-minute chart that is showing me that"
+},
+{
+"start": 912.24,
+"end": 918.0,
+"text": "price is willing to go lower. We have a"
+},
+{
+"start": 915.84,
+"end": 920.56,
+"text": "good capitulation play here. We have an"
+},
+{
+"start": 918.0,
+"end": 923.08,
+"text": "unfilled for valid gap right below us."
+},
+{
+"start": 920.56,
+"end": 925.44,
+"text": "This third candle failed to close above"
+},
+{
+"start": 923.08,
+"end": 927.52,
+"text": "the second candle's high, then we"
+},
+{
+"start": 925.44,
+"end": 930.08,
+"text": "actually have some good entries. So, at"
+},
+{
+"start": 927.52,
+"end": 931.6,
+"text": "this exact point, I will enter shorts"
+},
+{
+"start": 930.08,
+"end": 934.4,
+"text": "right here."
+},
+{
+"start": 931.6,
+"end": 936.48,
+"text": "Mark it with my stop loss right above"
+},
+{
+"start": 934.4,
+"end": 938.28,
+"text": "this candle's high, and my take profit"
+},
+{
+"start": 936.48,
+"end": 940.28,
+"text": "being where? At a one to one risk to"
+},
+{
+"start": 938.28,
+"end": 942.68,
+"text": "reward back into the unfilled fair value"
+},
+{
+"start": 940.28,
+"end": 945.84,
+"text": "gap. This is that simple. And right"
+},
+{
+"start": 942.68,
+"end": 948.84,
+"text": "here, my job is to basically predict"
+},
+{
+"start": 945.84,
+"end": 950.96,
+"text": "that the market was so aggressive to the"
+},
+{
+"start": 948.84,
+"end": 953.16,
+"text": "upside that it needs fuel. It needs"
+},
+{
+"start": 950.96,
+"end": 956.0,
+"text": "another level to actually find fair"
+},
+{
+"start": 953.16,
+"end": 958.0,
+"text": "value in and new buyers to actually"
+},
+{
+"start": 956.0,
+"end": 960.36,
+"text": "continue that uptrend. Price will never"
+},
+{
+"start": 958.0,
+"end": 963.0,
+"text": "just go up without ever pulling back."
+},
+{
+"start": 960.36,
+"end": 964.72,
+"text": "Once you create those gaps, and this"
+},
+{
+"start": 963.0,
+"end": 966.36,
+"text": "candle is showing you a signs of"
+},
+{
+"start": 964.72,
+"end": 968.44,
+"text": "aggression from sellers, you will"
+},
+{
+"start": 966.36,
+"end": 970.28,
+"text": "eventually see that gap being tapped"
+},
+{
+"start": 968.44,
+"end": 971.72,
+"text": "into in order to have enough fuel to go"
+},
+{
+"start": 970.28,
+"end": 973.48,
+"text": "to the upside. So, let's see what"
+},
+{
+"start": 971.72,
+"end": 974.96,
+"text": "happens right here when the brand new"
+},
+{
+"start": 973.48,
+"end": 976.56,
+"text": "bar opens up."
+},
+{
+"start": 974.96,
+"end": 980.0,
+"text": "We drive down lower."
+},
+{
+"start": 976.56,
+"end": 980.0,
+"text": "We chop. We chop. We chop."
+},
+{
+"start": 985.56,
+"end": 989.88,
+"text": "New 15-minute bar opens up, sweeps the"
+},
+{
+"start": 987.68,
+"end": 993.88,
+"text": "high, and then eventually comes back"
+},
+{
+"start": 989.88,
+"end": 995.36,
+"text": "down to have a huge move to the downside"
+},
+{
+"start": 993.88,
+"end": 997.92,
+"text": "to tap that unfilled fair value gap."
+},
+{
+"start": 995.36,
+"end": 1001.0,
+"text": "This was a scenario where it it did"
+},
+{
+"start": 997.92,
+"end": 1002.84,
+"text": "accumulate pretty much uh for a nice 30"
+},
+{
+"start": 1001.0,
+"end": 1004.8,
+"text": "minutes, but the framework got"
+},
+{
+"start": 1002.84,
+"end": 1007.6,
+"text": "respected. The reasoning behind the"
+},
+{
+"start": 1004.8,
+"end": 1010.04,
+"text": "trade is really what's leading us to"
+},
+{
+"start": 1007.6,
+"end": 1011.64,
+"text": "take it, and it's not the candlestick"
+},
+{
+"start": 1010.04,
+"end": 1013.36,
+"text": "pattern on the 1-minute chart. When"
+},
+{
+"start": 1011.64,
+"end": 1015.32,
+"text": "everything is aligning together on the"
+},
+{
+"start": 1013.36,
+"end": 1017.96,
+"text": "15, unfilled fair value gap is showing"
+},
+{
+"start": 1015.32,
+"end": 1020.0,
+"text": "up, the candle three is showing up, and"
+},
+{
+"start": 1017.96,
+"end": 1021.8,
+"text": "then the entry showing up, plus the good"
+},
+{
+"start": 1020.0,
+"end": 1023.36,
+"text": "timing. This is when you have a good"
+},
+{
+"start": 1021.8,
+"end": 1025.0,
+"text": "trade. This is when you can actually"
+},
+{
+"start": 1023.36,
+"end": 1026.12,
+"text": "replicate something over the long run."
+},
+{
+"start": 1025.0,
+"end": 1030.24,
+"text": "Here's another trade you could have"
+},
+{
+"start": 1026.12,
+"end": 1033.08,
+"text": "caught on May 6th, 2026 on the hourly"
+},
+{
+"start": 1030.24,
+"end": 1035.2,
+"text": "using also a 5-minute entry. So, here,"
+},
+{
+"start": 1033.08,
+"end": 1037.84,
+"text": "this is the 8:00 a.m. 1-hour candle,"
+},
+{
+"start": 1035.2,
+"end": 1040.0,
+"text": "closes bearish. The new one opens up,"
+},
+{
+"start": 1037.84,
+"end": 1041.68,
+"text": "drives down lower very aggressively. We"
+},
+{
+"start": 1040.0,
+"end": 1043.64,
+"text": "sweep the previous candle's low,"
+},
+{
+"start": 1041.68,
+"end": 1046.44,
+"text": "currently closing back within the range."
+},
+{
+"start": 1043.64,
+"end": 1048.64,
+"text": "And right there at 9:59:59"
+},
+{
+"start": 1046.44,
+"end": 1050.32,
+"text": "seconds, this hourly bar is closing back"
+},
+{
+"start": 1048.64,
+"end": 1051.8,
+"text": "within the range. What is happening"
+},
+{
+"start": 1050.32,
+"end": 1054.96,
+"text": "currently? We have an unfilled fair"
+},
+{
+"start": 1051.8,
+"end": 1057.24,
+"text": "value gap right above us on the hourly."
+},
+{
+"start": 1054.96,
+"end": 1059.84,
+"text": "We actually are seeing the candle number"
+},
+{
+"start": 1057.24,
+"end": 1062.36,
+"text": "three failing to close below the candle"
+},
+{
+"start": 1059.84,
+"end": 1064.36,
+"text": "number two, showing us that this is"
+},
+{
+"start": 1062.36,
+"end": 1067.16,
+"text": "responsive buyers stepping in, and we"
+},
+{
+"start": 1064.36,
+"end": 1069.16,
+"text": "have more chances of seeing the gap than"
+},
+{
+"start": 1067.16,
+"end": 1071.44,
+"text": "the internal low. Now, the only thing"
+},
+{
+"start": 1069.16,
+"end": 1073.76,
+"text": "that I have left to confirm is if we had"
+},
+{
+"start": 1071.44,
+"end": 1075.48,
+"text": "a good entry within the 5-minute chart"
+},
+{
+"start": 1073.76,
+"end": 1079.12,
+"text": "because the 5-minute is aligned with the"
+},
+{
+"start": 1075.48,
+"end": 1080.64,
+"text": "hourly. Now, this is a good scenario to"
+},
+{
+"start": 1079.12,
+"end": 1082.6,
+"text": "know because"
+},
+{
+"start": 1080.64,
+"end": 1084.28,
+"text": "this range is pretty big, okay? On the"
+},
+{
+"start": 1082.6,
+"end": 1086.04,
+"text": "hourly, you can't play exactly in the"
+},
+{
+"start": 1084.28,
+"end": 1087.8,
+"text": "same way that you're going to play on"
+},
+{
+"start": 1086.04,
+"end": 1089.92,
+"text": "the 15 because"
+},
+{
+"start": 1087.8,
+"end": 1093.44,
+"text": "this range is absolutely huge, and it"
+},
+{
+"start": 1089.92,
+"end": 1095.28,
+"text": "was also on the first hour of the market"
+},
+{
+"start": 1093.44,
+"end": 1097.64,
+"text": "open. So, here I can see this is a"
+},
+{
+"start": 1095.28,
+"end": 1099.28,
+"text": "200-point range, showing us that there"
+},
+{
+"start": 1097.64,
+"end": 1102.64,
+"text": "was a lot of buyers within that previous"
+},
+{
+"start": 1099.28,
+"end": 1104.96,
+"text": "print. So, now I can take out my fib"
+},
+{
+"start": 1102.64,
+"end": 1107.88,
+"text": "from the low to the high of that level,"
+},
+{
+"start": 1104.96,
+"end": 1110.0,
+"text": "and make sure that I would still survive"
+},
+{
+"start": 1107.88,
+"end": 1113.12,
+"text": "even if price would come back down"
+},
+{
+"start": 1110.0,
+"end": 1114.48,
+"text": "towards 50%. The best entry would be 50%"
+},
+{
+"start": 1113.12,
+"end": 1115.96,
+"text": "of that range, but I'm not going to be a"
+},
+{
+"start": 1114.48,
+"end": 1118.6,
+"text": "dick for a tick here. I am going to"
+},
+{
+"start": 1115.96,
+"end": 1121.12,
+"text": "enter right above this 50%, but I'm"
+},
+{
+"start": 1118.6,
+"end": 1122.24,
+"text": "going to have a wider stop to mostly"
+},
+{
+"start": 1121.12,
+"end": 1124.36,
+"text": "cover"
+},
+{
+"start": 1122.24,
+"end": 1126.44,
+"text": "if we have a wick fill within that range"
+},
+{
+"start": 1124.36,
+"end": 1128.12,
+"text": "since it's so big to then see the move"
+},
+{
+"start": 1126.44,
+"end": 1130.8,
+"text": "back to the upside towards the unfilled"
+},
+{
+"start": 1128.12,
+"end": 1132.72,
+"text": "gap. So, here, this area is an area with"
+},
+{
+"start": 1130.8,
+"end": 1134.72,
+"text": "low volume. I am predicting that we have"
+},
+{
+"start": 1132.72,
+"end": 1136.64,
+"text": "more chances of seeing number one than"
+},
+{
+"start": 1134.72,
+"end": 1138.52,
+"text": "number two, okay?"
+},
+{
+"start": 1136.64,
+"end": 1140.56,
+"text": "So, now what I'm going to do, I have a"
+},
+{
+"start": 1138.52,
+"end": 1142.32,
+"text": "breaker block being formed right here. I"
+},
+{
+"start": 1140.56,
+"end": 1143.96,
+"text": "have an order block being formed right"
+},
+{
+"start": 1142.32,
+"end": 1146.08,
+"text": "here. And I actually have another"
+},
+{
+"start": 1143.96,
+"end": 1148.68,
+"text": "breaker block being formed right down"
+},
+{
+"start": 1146.08,
+"end": 1150.0,
+"text": "there, okay? Three key levels being"
+},
+{
+"start": 1148.68,
+"end": 1152.6,
+"text": "formed. Which one is going to get"
+},
+{
+"start": 1150.0,
+"end": 1154.32,
+"text": "tapped? We don't know. With How deep is"
+},
+{
+"start": 1152.6,
+"end": 1156.56,
+"text": "the retracement going to be? Also, we"
+},
+{
+"start": 1154.32,
+"end": 1158.32,
+"text": "don't know. So, the best thing to do is"
+},
+{
+"start": 1156.56,
+"end": 1160.2,
+"text": "actually enter right in the middle"
+},
+{
+"start": 1158.32,
+"end": 1162.2,
+"text": "within that order block right here and"
+},
+{
+"start": 1160.2,
+"end": 1163.4,
+"text": "have a wide stop. So, let's see what it"
+},
+{
+"start": 1162.2,
+"end": 1165.6,
+"text": "does."
+},
+{
+"start": 1163.4,
+"end": 1167.6,
+"text": "We open up lower very aggressively."
+},
+{
+"start": 1165.6,
+"end": 1169.12,
+"text": "Let's Let's see if we can have a good"
+},
+{
+"start": 1167.6,
+"end": 1172.6,
+"text": "one-to-one risk-to-reward within that"
+},
+{
+"start": 1169.12,
+"end": 1175.6,
+"text": "range. So, if my target is 4.1, I will"
+},
+{
+"start": 1172.6,
+"end": 1177.36,
+"text": "have my stop loss also being 4.1"
+},
+{
+"start": 1175.6,
+"end": 1179.0,
+"text": "being right there. And let's see what"
+},
+{
+"start": 1177.36,
+"end": 1180.0,
+"text": "happens. We entered right at this order"
+},
+{
+"start": 1179.0,
+"end": 1182.88,
+"text": "block."
+},
+{
+"start": 1180.0,
+"end": 1185.68,
+"text": "Stop loss being at those wicks and take"
+},
+{
+"start": 1182.88,
+"end": 1189.08,
+"text": "profit being at the internal unfilled"
+},
+{
+"start": 1185.68,
+"end": 1189.08,
+"text": "value gap. Let's see how that does."
+},
+{
+"start": 1190.56,
+"end": 1195.2,
+"text": "Push up. Push right back down again."
+},
+{
+"start": 1197.32,
+"end": 1202.64,
+"text": "And within the next hour, we are seeing"
+},
+{
+"start": 1200.72,
+"end": 1205.24,
+"text": "a bullish distribution right back"
+},
+{
+"start": 1202.64,
+"end": 1206.92,
+"text": "towards the unfilled value gap."
+},
+{
+"start": 1205.24,
+"end": 1208.32,
+"text": "To be completely honest, there would"
+},
+{
+"start": 1206.92,
+"end": 1209.48,
+"text": "There could have been a way here that"
+},
+{
+"start": 1208.32,
+"end": 1211.4,
+"text": "you could have gotten stopped out"
+},
+{
+"start": 1209.48,
+"end": 1213.08,
+"text": "because you entered aggressively within"
+},
+{
+"start": 1211.4,
+"end": 1216.16,
+"text": "the range. But here, in my opinion,"
+},
+{
+"start": 1213.08,
+"end": 1218.16,
+"text": "since the range was above 150 handles,"
+},
+{
+"start": 1216.16,
+"end": 1220.2,
+"text": "you needed to make sure that you were"
+},
+{
+"start": 1218.16,
+"end": 1223.56,
+"text": "still alive even if price retraced back"
+},
+{
+"start": 1220.2,
+"end": 1225.04,
+"text": "to 50%. Okay? So, here, as soon as you"
+},
+{
+"start": 1223.56,
+"end": 1227.72,
+"text": "see that candle close back within the"
+},
+{
+"start": 1225.04,
+"end": 1229.6,
+"text": "range, plus having that unfilled gap,"
+},
+{
+"start": 1227.72,
+"end": 1231.16,
+"text": "you just need to be on side. You're"
+},
+{
+"start": 1229.6,
+"end": 1233.48,
+"text": "predicting that the next bar will be"
+},
+{
+"start": 1231.16,
+"end": 1235.12,
+"text": "bullish. So, if your stop loss is wide"
+},
+{
+"start": 1233.48,
+"end": 1237.84,
+"text": "enough to cover most of that candle's"
+},
+{
+"start": 1235.12,
+"end": 1240.64,
+"text": "range, then at one point, you never know"
+},
+{
+"start": 1237.84,
+"end": 1242.32,
+"text": "when, okay? You never know when, or"
+},
+{
+"start": 1240.64,
+"end": 1244.88,
+"text": "the exact period rate that it's going to"
+},
+{
+"start": 1242.32,
+"end": 1247.36,
+"text": "react from, but you know that you are"
+},
+{
+"start": 1244.88,
+"end": 1247.96,
+"text": "bullish for the next hour, which is"
+},
+{
+"start": 1247.36,
+"end": 1250.16,
+"text": "uh"
+},
+{
+"start": 1247.96,
+"end": 1251.28,
+"text": "the most important piece of information."
+},
+{
+"start": 1250.16,
+"end": 1253.2,
+"text": "Let's take a look at a scenario you"
+},
+{
+"start": 1251.28,
+"end": 1255.0,
+"text": "could have caught on May 7th. Right"
+},
+{
+"start": 1253.2,
+"end": 1257.2,
+"text": "here, we have the new 15-minute bar"
+},
+{
+"start": 1255.0,
+"end": 1258.72,
+"text": "opening. We're sweeping the previous"
+},
+{
+"start": 1257.2,
+"end": 1260.56,
+"text": "candle's low. Let's wait for an"
+},
+{
+"start": 1258.72,
+"end": 1262.8,
+"text": "inversion for value gap to get created"
+},
+{
+"start": 1260.56,
+"end": 1264.52,
+"text": "and us to make sure that we have good"
+},
+{
+"start": 1262.8,
+"end": 1266.44,
+"text": "enough confirmations to actually long"
+},
+{
+"start": 1264.52,
+"end": 1269.16,
+"text": "this market. We are seeing that"
+},
+{
+"start": 1266.44,
+"end": 1270.96,
+"text": "inversion for value gap. Is that a good"
+},
+{
+"start": 1269.16,
+"end": 1272.56,
+"text": "uh entry here? I would judge that being"
+},
+{
+"start": 1270.96,
+"end": 1275.08,
+"text": "a little bit too premature. Let's wait"
+},
+{
+"start": 1272.56,
+"end": 1276.72,
+"text": "for another confirmation. Here we have a"
+},
+{
+"start": 1275.08,
+"end": 1279.28,
+"text": "change in a state of delivery being"
+},
+{
+"start": 1276.72,
+"end": 1281.0,
+"text": "formed and unfilled Sorry, an inversion"
+},
+{
+"start": 1279.28,
+"end": 1282.72,
+"text": "for value gap also."
+},
+{
+"start": 1281.0,
+"end": 1283.64,
+"text": "Let's try to answer aggressively within"
+},
+{
+"start": 1282.72,
+"end": 1286.72,
+"text": "that"
+},
+{
+"start": 1283.64,
+"end": 1288.08,
+"text": "closure right here having a wide stop"
+},
+{
+"start": 1286.72,
+"end": 1289.56,
+"text": "going for a little bit more of a"
+},
+{
+"start": 1288.08,
+"end": 1291.92,
+"text": "prediction play."
+},
+{
+"start": 1289.56,
+"end": 1294.12,
+"text": "Do we see this 25 candle pushing up? We"
+},
+{
+"start": 1291.92,
+"end": 1297.04,
+"text": "can put the stop loss right here. Take"
+},
+{
+"start": 1294.12,
+"end": 1299.52,
+"text": "profit right above and let's pray that"
+},
+{
+"start": 1297.04,
+"end": 1301.6,
+"text": "price goes up and we can have a nice"
+},
+{
+"start": 1299.52,
+"end": 1303.24,
+"text": "push to the upside. Okay? So, there's"
+},
+{
+"start": 1301.6,
+"end": 1305.96,
+"text": "still 4 minutes left for that 15-minute"
+},
+{
+"start": 1303.24,
+"end": 1307.32,
+"text": "bar to close. We entered in a prediction"
+},
+{
+"start": 1305.96,
+"end": 1310.52,
+"text": "play a little bit more aggressive than"
+},
+{
+"start": 1307.32,
+"end": 1312.64,
+"text": "the others, but sometimes it is the only"
+},
+{
+"start": 1310.52,
+"end": 1314.04,
+"text": "way to actually make money in certain"
+},
+{
+"start": 1312.64,
+"end": 1316.48,
+"text": "market conditions. It is to enter"
+},
+{
+"start": 1314.04,
+"end": 1320.08,
+"text": "aggressively and use that distribution"
+},
+{
+"start": 1316.48,
+"end": 1323.16,
+"text": "here in your advantage. So, now 28"
+},
+{
+"start": 1320.08,
+"end": 1325.24,
+"text": "29 and right there you can see you can"
+},
+{
+"start": 1323.16,
+"end": 1326.96,
+"text": "actually put your take profit within the"
+},
+{
+"start": 1325.24,
+"end": 1329.04,
+"text": "unfilled for value gap. And since you"
+},
+{
+"start": 1326.96,
+"end": 1331.0,
+"text": "entered a little bit prematurely and you"
+},
+{
+"start": 1329.04,
+"end": 1333.4,
+"text": "were able to see that distribution"
+},
+{
+"start": 1331.0,
+"end": 1335.12,
+"text": "beforehand and you took the risk, which"
+},
+{
+"start": 1333.4,
+"end": 1337.72,
+"text": "is not something that a lot of people"
+},
+{
+"start": 1335.12,
+"end": 1339.72,
+"text": "will be able to do in in certain cases,"
+},
+{
+"start": 1337.72,
+"end": 1341.52,
+"text": "then you're seeing that candle close"
+},
+{
+"start": 1339.72,
+"end": 1343.32,
+"text": "back within the range and having that"
+},
+{
+"start": 1341.52,
+"end": 1345.44,
+"text": "unfilled right above you. As soon as"
+},
+{
+"start": 1343.32,
+"end": 1347.68,
+"text": "this 15-minute bar will close, a new one"
+},
+{
+"start": 1345.44,
+"end": 1350.28,
+"text": "will open and will most likely drive us"
+},
+{
+"start": 1347.68,
+"end": 1353.12,
+"text": "back to the upside into the unfilled for"
+},
+{
+"start": 1350.28,
+"end": 1354.4,
+"text": "value gap. Let's see how that goes."
+},
+{
+"start": 1353.12,
+"end": 1355.88,
+"text": "1"
+},
+{
+"start": 1354.4,
+"end": 1358.4,
+"text": "2"
+},
+{
+"start": 1355.88,
+"end": 1360.64,
+"text": "3 minutes and we see the move back"
+},
+{
+"start": 1358.4,
+"end": 1362.88,
+"text": "towards the unfilled for value gap."
+},
+{
+"start": 1360.64,
+"end": 1364.88,
+"text": "Won't lie, this was a way harder trade"
+},
+{
+"start": 1362.88,
+"end": 1366.8,
+"text": "to take. Not a lot of people would be"
+},
+{
+"start": 1364.88,
+"end": 1368.48,
+"text": "able to take this or"
+},
+{
+"start": 1366.8,
+"end": 1371.44,
+"text": "I would say have the confidence in order"
+},
+{
+"start": 1368.48,
+"end": 1373.0,
+"text": "to long without any without seeing any"
+},
+{
+"start": 1371.44,
+"end": 1374.76,
+"text": "pullbacks and also longing so"
+},
+{
+"start": 1373.0,
+"end": 1377.0,
+"text": "prematurely. But one thing that I will"
+},
+{
+"start": 1374.76,
+"end": 1379.6,
+"text": "say is, if you can catch those kind of"
+},
+{
+"start": 1377.0,
+"end": 1381.4,
+"text": "trades and you have the confidence,"
+},
+{
+"start": 1379.6,
+"end": 1384.52,
+"text": "you are you are going to be very very"
+},
+{
+"start": 1381.4,
+"end": 1386.04,
+"text": "good. But the thing is, I would say that"
+},
+{
+"start": 1384.52,
+"end": 1388.92,
+"text": "could make you take those kind of trades"
+},
+{
+"start": 1386.04,
+"end": 1390.44,
+"text": "is size. If you go in with lighter size"
+},
+{
+"start": 1388.92,
+"end": 1392.16,
+"text": "and then you add on the way up because"
+},
+{
+"start": 1390.44,
+"end": 1394.44,
+"text": "you have more and more confirmations,"
+},
+{
+"start": 1392.16,
+"end": 1397.4,
+"text": "that makes more sense than just entering"
+},
+{
+"start": 1394.44,
+"end": 1399.52,
+"text": "with five contracts right here."
+},
+{
+"start": 1397.4,
+"end": 1401.96,
+"text": "And you know, being forced to close the"
+},
+{
+"start": 1399.52,
+"end": 1404.12,
+"text": "position at a loss if the candle, you"
+},
+{
+"start": 1401.96,
+"end": 1405.88,
+"text": "know, wipes back down. But here, of"
+},
+{
+"start": 1404.12,
+"end": 1407.0,
+"text": "course, it's in hindsight, but this was"
+},
+{
+"start": 1405.88,
+"end": 1408.88,
+"text": "a very good trade. You could have"
+},
+{
+"start": 1407.0,
+"end": 1411.92,
+"text": "entered right here with lighter size and"
+},
+{
+"start": 1408.88,
+"end": 1413.56,
+"text": "then added here at around 28, 29 when"
+},
+{
+"start": 1411.92,
+"end": 1415.96,
+"text": "you knew that candle was going to close"
+},
+{
+"start": 1413.56,
+"end": 1418.68,
+"text": "in the way that it did. But scenario"
+},
+{
+"start": 1415.96,
+"end": 1419.92,
+"text": "that is still worth showing you guys."
+},
+{
+"start": 1418.68,
+"end": 1422.44,
+"text": "Here we're looking at another scenario"
+},
+{
+"start": 1419.92,
+"end": 1425.48,
+"text": "that happened on Thursday, May 7th, and"
+},
+{
+"start": 1422.44,
+"end": 1427.44,
+"text": "it's on the hourly chart here. We have a"
+},
+{
+"start": 1425.48,
+"end": 1429.96,
+"text": "candle that is displacing aggressively"
+},
+{
+"start": 1427.44,
+"end": 1432.08,
+"text": "below the first candle's down wick. If"
+},
+{
+"start": 1429.96,
+"end": 1433.68,
+"text": "the candle number three sweeps the"
+},
+{
+"start": 1432.08,
+"end": 1436.08,
+"text": "previous candle's low and closes back"
+},
+{
+"start": 1433.68,
+"end": 1437.68,
+"text": "within the range here, and we have an"
+},
+{
+"start": 1436.08,
+"end": 1439.28,
+"text": "unfilled fair value gap right above us,"
+},
+{
+"start": 1437.68,
+"end": 1441.12,
+"text": "plus we have a good confirmation right"
+},
+{
+"start": 1439.28,
+"end": 1442.84,
+"text": "there, I will predict that the next few"
+},
+{
+"start": 1441.12,
+"end": 1444.72,
+"text": "bars will be to the upside rather than"
+},
+{
+"start": 1442.84,
+"end": 1446.48,
+"text": "to the downside. Simple as this, all"
+},
+{
+"start": 1444.72,
+"end": 1447.68,
+"text": "right? So here,"
+},
+{
+"start": 1446.48,
+"end": 1451.08,
+"text": "waiting for the new hourly candle to"
+},
+{
+"start": 1447.68,
+"end": 1452.88,
+"text": "open, goes down lower, sweeps the low,"
+},
+{
+"start": 1451.08,
+"end": 1456.72,
+"text": "okay? I'm going to be looking for cues"
+},
+{
+"start": 1452.88,
+"end": 1459.72,
+"text": "of time, okay? We push up aggressively."
+},
+{
+"start": 1456.72,
+"end": 1463.76,
+"text": "140, 145,"
+},
+{
+"start": 1459.72,
+"end": 1465.8,
+"text": "150, right there at that moment. As soon"
+},
+{
+"start": 1463.76,
+"end": 1467.64,
+"text": "as I have good confirmations that price"
+},
+{
+"start": 1465.8,
+"end": 1470.72,
+"text": "will go to the upside right there, I"
+},
+{
+"start": 1467.64,
+"end": 1472.48,
+"text": "will see a nice long opportunity back to"
+},
+{
+"start": 1470.72,
+"end": 1474.0,
+"text": "the upside. And here, I don't"
+},
+{
+"start": 1472.48,
+"end": 1476.48,
+"text": "necessarily want to wait for a 5-minute"
+},
+{
+"start": 1474.0,
+"end": 1477.88,
+"text": "closure. I will go to the 3-minute chart"
+},
+{
+"start": 1476.48,
+"end": 1479.64,
+"text": "in order to make sure I have good"
+},
+{
+"start": 1477.88,
+"end": 1482.04,
+"text": "confirmations. And if I have a good"
+},
+{
+"start": 1479.64,
+"end": 1483.64,
+"text": "spike to the upside and I have an"
+},
+{
+"start": 1482.04,
+"end": 1485.92,
+"text": "inversion gap or an order block being"
+},
+{
+"start": 1483.64,
+"end": 1488.04,
+"text": "created, and I know there's su- you"
+},
+{
+"start": 1485.92,
+"end": 1489.8,
+"text": "know, I would say 5 to 10 minutes left"
+},
+{
+"start": 1488.04,
+"end": 1491.36,
+"text": "for that hourly bar to close, I will"
+},
+{
+"start": 1489.8,
+"end": 1495.0,
+"text": "enter aggressively."
+},
+{
+"start": 1491.36,
+"end": 1495.0,
+"text": "So here, let's wait."
+},
+{
+"start": 1495.4,
+"end": 1499.56,
+"text": "Pushes back down and boom, we have the"
+},
+{
+"start": 1497.84,
+"end": 1501.28,
+"text": "aggressive candle I was looking for."
+},
+{
+"start": 1499.56,
+"end": 1502.92,
+"text": "There's only 5 minutes left for that"
+},
+{
+"start": 1501.28,
+"end": 1505.12,
+"text": "hourly bar to close."
+},
+{
+"start": 1502.92,
+"end": 1507.28,
+"text": "We have an inversion gap being formed."
+},
+{
+"start": 1505.12,
+"end": 1509.32,
+"text": "We have a good displacement being"
+},
+{
+"start": 1507.28,
+"end": 1510.48,
+"text": "formed. Also, we have a breaker block"
+},
+{
+"start": 1509.32,
+"end": 1512.48,
+"text": "with change in the state of delivery."
+},
+{
+"start": 1510.48,
+"end": 1514.64,
+"text": "What is a change in state of of"
+},
+{
+"start": 1512.48,
+"end": 1516.32,
+"text": "delivery? It's when you have a low,"
+},
+{
+"start": 1514.64,
+"end": 1518.16,
+"text": "high, lower low,"
+},
+{
+"start": 1516.32,
+"end": 1520.76,
+"text": "higher high, okay? And right there,"
+},
+{
+"start": 1518.16,
+"end": 1522.36,
+"text": "you're using this neckline as an area of"
+},
+{
+"start": 1520.76,
+"end": 1523.92,
+"text": "support in order to see higher prices."
+},
+{
+"start": 1522.36,
+"end": 1526.64,
+"text": "Of course, we came all the way back"
+},
+{
+"start": 1523.92,
+"end": 1528.44,
+"text": "down, not necessarily using this, okay?"
+},
+{
+"start": 1526.64,
+"end": 1530.24,
+"text": "But, we are still within that zone,"
+},
+{
+"start": 1528.44,
+"end": 1532.12,
+"text": "okay? So, any area within that zone"
+},
+{
+"start": 1530.24,
+"end": 1534.4,
+"text": "could react and pop us back up. So,"
+},
+{
+"start": 1532.12,
+"end": 1536.12,
+"text": "we're still within that that block of"
+},
+{
+"start": 1534.4,
+"end": 1537.88,
+"text": "orders right here that could make us"
+},
+{
+"start": 1536.12,
+"end": 1540.36,
+"text": "push to the upside. Plus, we have the"
+},
+{
+"start": 1537.88,
+"end": 1541.72,
+"text": "inversion. This is a trade a good trade"
+},
+{
+"start": 1540.36,
+"end": 1542.84,
+"text": "uh that will be taken on the 3-minute"
+},
+{
+"start": 1541.72,
+"end": 1544.92,
+"text": "chart."
+},
+{
+"start": 1542.84,
+"end": 1548.36,
+"text": "We'll enter right here with three"
+},
+{
+"start": 1544.92,
+"end": 1551.52,
+"text": "contracts, market, okay? Stop loss right"
+},
+{
+"start": 1548.36,
+"end": 1554.2,
+"text": "below this candle's low. Take profit"
+},
+{
+"start": 1551.52,
+"end": 1555.72,
+"text": "where? At a one to one risk to reward."
+},
+{
+"start": 1554.2,
+"end": 1558.24,
+"text": "Back towards the unfilled fair value"
+},
+{
+"start": 1555.72,
+"end": 1560.44,
+"text": "gap. We're going to see as soon as this"
+},
+{
+"start": 1558.24,
+"end": 1562.76,
+"text": "hourly bar will close, something will"
+},
+{
+"start": 1560.44,
+"end": 1564.24,
+"text": "happen. You will see us go back up"
+},
+{
+"start": 1562.76,
+"end": 1565.96,
+"text": "towards the unfilled fair value gap for"
+},
+{
+"start": 1564.24,
+"end": 1568.04,
+"text": "a one to one, okay? So, here we're"
+},
+{
+"start": 1565.96,
+"end": 1570.16,
+"text": "entering on that displacement candle. We"
+},
+{
+"start": 1568.04,
+"end": 1572.6,
+"text": "have that nice push up"
+},
+{
+"start": 1570.16,
+"end": 1575.68,
+"text": "3 minutes before the close, and let's"
+},
+{
+"start": 1572.6,
+"end": 1578.28,
+"text": "see what happens. We open up, go back"
+},
+{
+"start": 1575.68,
+"end": 1580.96,
+"text": "down towards the order block,"
+},
+{
+"start": 1578.28,
+"end": 1583.4,
+"text": "and then we open up higher to fill the"
+},
+{
+"start": 1580.96,
+"end": 1586.56,
+"text": "unfilled fair value gap, okay? This is"
+},
+{
+"start": 1583.4,
+"end": 1588.88,
+"text": "my next fuel level. I have more chances"
+},
+{
+"start": 1586.56,
+"end": 1591.0,
+"text": "of seeing this gap being taken out than"
+},
+{
+"start": 1588.88,
+"end": 1592.76,
+"text": "the low of this candle. If we are"
+},
+{
+"start": 1591.0,
+"end": 1594.72,
+"text": "wicking this level aggressively, for"
+},
+{
+"start": 1592.76,
+"end": 1597.24,
+"text": "wicking the second candle's low, plus we"
+},
+{
+"start": 1594.72,
+"end": 1599.4,
+"text": "have a gap above us. Plus, we have good"
+},
+{
+"start": 1597.24,
+"end": 1601.84,
+"text": "internal confirmations of aggression,"
+},
+{
+"start": 1599.4,
+"end": 1604.88,
+"text": "okay? Plus timing. And just to let you"
+},
+{
+"start": 1601.84,
+"end": 1606.28,
+"text": "guys know, let's see what happened what"
+},
+{
+"start": 1604.88,
+"end": 1608.48,
+"text": "you know, right after we tap the"
+},
+{
+"start": 1606.28,
+"end": 1611.0,
+"text": "unfilled hourly gap, okay? If the market"
+},
+{
+"start": 1608.48,
+"end": 1612.96,
+"text": "is truly bearish, we should respect this"
+},
+{
+"start": 1611.0,
+"end": 1615.04,
+"text": "gap and go back down and print a bearish"
+},
+{
+"start": 1612.96,
+"end": 1617.24,
+"text": "candle, but if the market is bullish,"
+},
+{
+"start": 1615.04,
+"end": 1620.28,
+"text": "then we will disrespect it. But both of"
+},
+{
+"start": 1617.24,
+"end": 1621.76,
+"text": "those are what we call predicting. We"
+},
+{
+"start": 1620.28,
+"end": 1623.68,
+"text": "don't know what's going to happen, so"
+},
+{
+"start": 1621.76,
+"end": 1625.32,
+"text": "why would you predict that the next"
+},
+{
+"start": 1623.68,
+"end": 1627.08,
+"text": "candle would be bullish? Why don't you"
+},
+{
+"start": 1625.32,
+"end": 1628.84,
+"text": "just trade back towards the next fair"
+},
+{
+"start": 1627.08,
+"end": 1631.32,
+"text": "value which is"
+},
+{
+"start": 1628.84,
+"end": 1632.88,
+"text": "in my opinion a far better trade to take"
+},
+{
+"start": 1631.32,
+"end": 1634.92,
+"text": "than a prediction."
+},
+{
+"start": 1632.88,
+"end": 1636.84,
+"text": "And then you can see right here we ended"
+},
+{
+"start": 1634.92,
+"end": 1639.04,
+"text": "up actually"
+},
+{
+"start": 1636.84,
+"end": 1640.84,
+"text": "um respecting that fair value gap. So if"
+},
+{
+"start": 1639.04,
+"end": 1642.4,
+"text": "you were in longs and holding right"
+},
+{
+"start": 1640.84,
+"end": 1644.0,
+"text": "above the level that I actually took"
+},
+{
+"start": 1642.4,
+"end": 1646.44,
+"text": "profits in, then you would have gotten"
+},
+{
+"start": 1644.0,
+"end": 1648.44,
+"text": "stopped out. But next fair value is from"
+},
+{
+"start": 1646.44,
+"end": 1650.16,
+"text": "here to there. Here's another scenario."
+},
+{
+"start": 1648.44,
+"end": 1653.56,
+"text": "We are pushing very aggressively on the"
+},
+{
+"start": 1650.16,
+"end": 1656.04,
+"text": "15-minute candles. We are closing above"
+},
+{
+"start": 1653.56,
+"end": 1658.12,
+"text": "the first candle's up wick aggressively."
+},
+{
+"start": 1656.04,
+"end": 1659.6,
+"text": "So now if this third candle closes back"
+},
+{
+"start": 1658.12,
+"end": 1663.64,
+"text": "within the range plus we have a gap"
+},
+{
+"start": 1659.6,
+"end": 1666.12,
+"text": "below us, I will short. Okay? So here"
+},
+{
+"start": 1663.64,
+"end": 1668.6,
+"text": "it's 11:10."
+},
+{
+"start": 1666.12,
+"end": 1670.12,
+"text": "11:11. It is not a good time to actually"
+},
+{
+"start": 1668.6,
+"end": 1672.96,
+"text": "short this market even if we form a"
+},
+{
+"start": 1670.12,
+"end": 1674.96,
+"text": "breaker. Breaker being high, low, higher"
+},
+{
+"start": 1672.96,
+"end": 1677.68,
+"text": "high, lower low, and then you see the"
+},
+{
+"start": 1674.96,
+"end": 1679.6,
+"text": "pullback and use this as a support level"
+},
+{
+"start": 1677.68,
+"end": 1681.4,
+"text": "in order to see some downside. Why is it"
+},
+{
+"start": 1679.6,
+"end": 1683.96,
+"text": "not a good trade right now? Because we"
+},
+{
+"start": 1681.4,
+"end": 1686.4,
+"text": "don't have the cues of time. Okay? We"
+},
+{
+"start": 1683.96,
+"end": 1688.04,
+"text": "have We only have the cues of price, but"
+},
+{
+"start": 1686.4,
+"end": 1690.28,
+"text": "here I need to make sure that this third"
+},
+{
+"start": 1688.04,
+"end": 1692.52,
+"text": "candle actually closes back within the"
+},
+{
+"start": 1690.28,
+"end": 1694.36,
+"text": "range of candle number two. And here"
+},
+{
+"start": 1692.52,
+"end": 1696.32,
+"text": "we're too close. So if we're too close,"
+},
+{
+"start": 1694.36,
+"end": 1698.64,
+"text": "it is a gamble. So now I'm going to wait"
+},
+{
+"start": 1696.32,
+"end": 1700.24,
+"text": "for a reaction from this level"
+},
+{
+"start": 1698.64,
+"end": 1703.04,
+"text": "which we got right here. I'm going to"
+},
+{
+"start": 1700.24,
+"end": 1705.2,
+"text": "enter sales putting my stop loss right"
+},
+{
+"start": 1703.04,
+"end": 1706.88,
+"text": "above this candle's high and my take"
+},
+{
+"start": 1705.2,
+"end": 1710.2,
+"text": "profit within the unfilled fair value"
+},
+{
+"start": 1706.88,
+"end": 1712.28,
+"text": "gap. We're seeing right there that 13"
+},
+{
+"start": 1710.2,
+"end": 1714.04,
+"text": "candle pushing. There's still 2 minutes"
+},
+{
+"start": 1712.28,
+"end": 1716.84,
+"text": "left for that 15-minute bar to close."
+},
+{
+"start": 1714.04,
+"end": 1718.64,
+"text": "Let's see what happens. Right there"
+},
+{
+"start": 1716.84,
+"end": 1720.8,
+"text": "we push down again, so now I can"
+},
+{
+"start": 1718.64,
+"end": 1722.32,
+"text": "actually put my take profit within that"
+},
+{
+"start": 1720.8,
+"end": 1724.08,
+"text": "unfilled fair value gap. Let's see"
+},
+{
+"start": 1722.32,
+"end": 1725.72,
+"text": "what's going to happen because this"
+},
+{
+"start": 1724.08,
+"end": 1727.96,
+"text": "15-minute bar is is"
+},
+{
+"start": 1725.72,
+"end": 1729.32,
+"text": "right now within the next second. and as"
+},
+{
+"start": 1727.96,
+"end": 1731.88,
+"text": "soon as this 15-minute candle will"
+},
+{
+"start": 1729.32,
+"end": 1733.2,
+"text": "close, plus we have that gap below us, I"
+},
+{
+"start": 1731.88,
+"end": 1735.92,
+"text": "am predicting that we're going to do"
+},
+{
+"start": 1733.2,
+"end": 1735.92,
+"text": "this. Boom."
+},
+{
+"start": 1736.04,
+"end": 1741.64,
+"text": "And right here, in literally 2 minutes,"
+},
+{
+"start": 1738.6,
+"end": 1743.92,
+"text": "we saw the open to the downside and"
+},
+{
+"start": 1741.64,
+"end": 1745.84,
+"text": "filling the unfilled 15-minute gap."
+},
+{
+"start": 1743.92,
+"end": 1747.64,
+"text": "Very, very good trade. So, there it is,"
+},
+{
+"start": 1745.84,
+"end": 1749.68,
+"text": "the unfilled fair value gap model. Built"
+},
+{
+"start": 1747.64,
+"end": 1751.52,
+"text": "to keep you funded, keep you consistent,"
+},
+{
+"start": 1749.68,
+"end": 1753.24,
+"text": "and keep your equity curve moving in one"
+},
+{
+"start": 1751.52,
+"end": 1755.32,
+"text": "direction. Most traders fail prop firms"
+},
+{
+"start": 1753.24,
+"end": 1756.52,
+"text": "because they never had a real plan. Now"
+},
+{
+"start": 1755.32,
+"end": 1758.24,
+"text": "you do. If you want to trade this live"
+},
+{
+"start": 1756.52,
+"end": 1760.24,
+"text": "with me, see me execute this model in"
+},
+{
+"start": 1758.24,
+"end": 1762.04,
+"text": "real-time, manage my accounts, and get"
+},
+{
+"start": 1760.24,
+"end": 1763.96,
+"text": "direct access, the link to the VIP"
+},
+{
+"start": 1762.04,
+"end": 1766.2,
+"text": "Discord is in the description. We are"
+},
+{
+"start": 1763.96,
+"end": 1767.76,
+"text": "already at 30,000 subscribers. I want to"
+},
+{
+"start": 1766.2,
+"end": 1769.36,
+"text": "thank you guys so much for the love, for"
+},
+{
+"start": 1767.76,
+"end": 1770.6,
+"text": "the support. And if this video helped"
+},
+{
+"start": 1769.36,
+"end": 1772.4,
+"text": "you, make sure to subscribe to the"
+},
+{
+"start": 1770.6,
+"end": 1774.28,
+"text": "channel and drop a like in this video."
+},
+{
+"start": 1772.4,
+"end": 1775.68,
+"text": "Also, drop a comment below telling me"
+},
+{
+"start": 1774.28,
+"end": 1777.04,
+"text": "what you want to see next from me. I"
+},
+{
+"start": 1775.68,
+"end": 1780.92,
+"text": "appreciate you guys so much, and I'll"
+},
+{
+"start": 1777.04,
+"end": 1780.92,
+"text": "see you on the next one. Peace out."
+}
+]
+}

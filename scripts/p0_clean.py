@@ -120,6 +120,9 @@ def main():
         if not row["file"]:
             continue
         path = RAW_DIR / row["file"]
+        if not path.exists():
+            print(f"[clean] {vid}: {row['file']} absent (relancer p0_subs.py)", file=sys.stderr)
+            continue
         meta = json.loads((META_DIR / f"{vid}.json").read_text(encoding="utf-8"))
         segs = parse_json3(path) if path.suffix == ".json3" else parse_vtt(path)
         if not segs:
