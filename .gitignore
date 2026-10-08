@@ -4,3 +4,11 @@ __pycache__/
 .venv/
 # sous-titres bruts : régénérables, et data/transcripts/json garde tous les segments horodatés
 data/subs_raw/
+# données de marché Databento : sous licence, jamais dans ce dépôt public
+*.parquet
+*.dbn
+*.dbn.zst
+glbx-*.csv
+glbx-*.zip
+market_data/
+.pytest_cache/

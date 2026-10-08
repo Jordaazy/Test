@@ -1,0 +1,574 @@
+//@version=6
+strategy("AMAS PFT — Unfilled FVG (stratégie)", shorttitle="UFVG strat", overlay=true, max_bars_back=1000,
+     process_orders_on_close=false, default_qty_type=strategy.fixed, default_qty_value=1,
+     initial_capital=50000, commission_type=strategy.commission.cash_per_contract, commission_value=2.25,
+     slippage=1, max_lines_count=500, max_labels_count=500)
+// Modèle « Unfilled FVG » d'AMAS PFT, formalisé à partir de ses vidéos (dépôt Jordaazy/Test, branche
+// claude/amas-pft-phase0 : strategy/regles.md, strategy/pseudocode.md). Généré par pine/build.py.
+// Usage éducatif ; aucune garantie de résultat.
+
+// ═══════════════════════════════════════════════════════════════════════════════════════════════
+// Logique commune (strategy/pseudocode.md). Ce fichier est inséré tel quel dans l'indicateur et
+// dans la strategy() par pine/build.py — ne pas l'utiliser seul.
+// Graphique conseillé : 1 min pour un FVG 15 min, 5 min pour un FVG 1 h, 15 min pour un FVG 4 h.
+// ═══════════════════════════════════════════════════════════════════════════════════════════════
+
+// ───────── Entrées
+grpS = "1. Setup HTF"
+htf        = input.timeframe("15", "Timeframe du FVG (HTF)", options=["15", "60", "240"], group=grpS)
+gapMin     = input.float(0.25, "Taille mini du gap (points)", minval=0, step=0.25, group=grpS)
+c3Rule     = input.string("close_inside", "Règle C3", options=["close_inside", "sweep_c2", "sweep_c2+wick"], group=grpS)
+c3WickMin  = input.float(0.3, "Mèche mini de C3 (× range de C3)", minval=0, step=0.05, group=grpS)
+dispK      = input.float(0.0, "Displacement C2 : corps ≥ k × ATR14 HTF (0 = off)", minval=0, step=0.25, group=grpS)
+bodyMin    = input.float(0.0, "Displacement C2 : corps / range mini", minval=0, maxval=1, step=0.05, group=grpS)
+consume    = input.bool(true, "Setup consommé si l'objectif est touché avant l'entrée", group=grpS)
+
+grpT = "2. Timing"
+w1On       = input.bool(true, "W1 : anticipation en fin de C3", group=grpT)
+w1Min15    = input.int(4, "W1 : minutes avant clôture (HTF 15)", minval=1, group=grpT)
+w1Min60    = input.int(10, "W1 : minutes avant clôture (HTF 60)", minval=1, group=grpT)
+w1Min240   = input.int(30, "W1 : minutes avant clôture (HTF 240)", minval=1, group=grpT)
+w1DistFrac = input.float(0.25, "W1 : distance mini à l'extrême de C2 (× range de C2)", minval=0, step=0.05, group=grpT)
+w2On       = input.bool(true, "W2 : pendant C4", group=grpT)
+flipReq    = input.bool(false, "W2 : flip de l'open de C4 exigé", group=grpT)
+forcedExit = input.string("cloture_C5", "Sortie forcée", options=["cloture_C4", "cloture_C5", "jamais"], group=grpT)
+sessStart  = input.int(830, "Entrées : début (HHMM, New York)", minval=0, maxval=2359, group=grpT)
+sessEnd    = input.int(1600, "Entrées : fin (HHMM, New York)", minval=0, maxval=2400, group=grpT)
+
+grpE = "3. Entrée LTF"
+useIFVG    = input.bool(true, "Modèle IFVG", group=grpE)
+useCISD    = input.bool(true, "Modèle CISD / breaker", group=grpE)
+useOB      = input.bool(false, "Modèle OB (break and retest)", group=grpE)
+fracN      = input.int(2, "Fractal n (swings)", minval=1, maxval=5, group=grpE)
+ifvgMin    = input.float(0.25, "IFVG : taille mini (points)", minval=0, step=0.25, group=grpE)
+orderType  = input.string("marche_cloture", "Type d'ordre", options=["marche_cloture", "limite_zone"], group=grpE)
+
+grpX = "4. Sortie"
+tpDepth    = input.float(0.0, "Objectif dans le gap (0 = bord proche, 1 = comblement)", minval=0, maxval=1, step=0.25, group=grpX)
+stopMode   = input.string("TP_FIRST", "Mode de stop", options=["TP_FIRST", "STRUCTURE", "C3_EXTREME"], group=grpX)
+bufTicks   = input.int(2, "Marge du stop (ticks)", minval=0, group=grpX)
+dist15     = input.float(8, "Distance mini à l'objectif, HTF 15 (points)", minval=0, group=grpX)
+dist60     = input.float(15, "Distance mini à l'objectif, HTF 60 (points)", minval=0, group=grpX)
+dist240    = input.float(25, "Distance mini à l'objectif, HTF 240 (points)", minval=0, group=grpX)
+bigRange1h = input.float(150, "HTF 60 : range de C3 au-delà duquel on entre à 50 % (0 = off)", minval=0, group=grpX)
+maxPerDay  = input.int(1, "Trades max par jour", minval=1, group=grpX)
+
+// ───────── Constantes
+htfMs   = timeframe.in_seconds(htf) * 1000
+w1Min   = htf == "15" ? w1Min15 : htf == "60" ? w1Min60 : w1Min240
+distMin = htf == "15" ? dist15 : htf == "60" ? dist60 : dist240
+tz      = "America/New_York"
+
+// ───────── Types
+type Bar
+    float o
+    float h
+    float l
+    float c
+    int   t
+
+type Win
+    int          start
+    float        minL
+    float        maxH
+    array<float> bearTop
+    array<float> bullBot
+    array<int>   sh
+    array<int>   sl
+
+newWin() =>
+    Win.new(bar_index, low, high, array.new<float>(), array.new<float>(), array.new<int>(), array.new<int>())
+
+// ───────── Utilitaires sur l'historique (offsets a..b, a <= b)
+f_minLow(int a, int b) =>
+    float m = low[a]
+    for i = a to b
+        m := math.min(m, low[i])
+    m
+
+f_maxHigh(int a, int b) =>
+    float m = high[a]
+    for i = a to b
+        m := math.max(m, high[i])
+    m
+
+f_maxClose(int a, int b) =>
+    float m = close[a]
+    for i = a to b
+        m := math.max(m, close[i])
+    m
+
+f_minClose(int a, int b) =>
+    float m = close[a]
+    for i = a to b
+        m := math.min(m, close[i])
+    m
+
+// dernier élément d'un tableau d'indices strictement inférieur à x (-1 sinon)
+f_lastBelow(array<int> arr, int x) =>
+    int res = -1
+    int u = arr.size() - 1
+    while u >= 0 and res < 0
+        int v = arr.get(u)
+        if v < x
+            res := v
+        u -= 1
+    res
+
+// ───────── Modèles d'entrée LTF (pseudocode §5)
+// Renvoie [signal, zone (prix limite), invalidation, modèle]
+f_long(Win w) =>
+    bool   sig  = false
+    float  zone = na
+    float  inv  = na
+    string mdl  = ""
+    if not na(w) and useIFVG and w.bearTop.size() > 0
+        float top = w.bearTop.last()
+        if close > top
+            sig  := true
+            zone := top
+            inv  := w.minL
+            mdl  := "IFVG"
+    if not na(w) and (useCISD or useOB)
+        int  t    = w.sh.size() - 1
+        int  cnt  = 0
+        bool done = false
+        while t >= 0 and cnt < 3 and not done
+            int iH = w.sh.get(t)
+            t   -= 1
+            cnt += 1
+            int   oH  = bar_index - iH
+            float lvl = high[oH]
+            bool crossed = close > lvl and (oH - 1 < 1 or f_maxClose(1, oH - 1) <= lvl)
+            if crossed
+                int iL1 = f_lastBelow(w.sl, iH)
+                if iL1 >= 0
+                    if useCISD and oH - 1 >= 1
+                        float L2 = f_minLow(1, oH - 1)
+                        if L2 < low[bar_index - iL1]
+                            int  j     = iH
+                            int  q     = iH
+                            bool found = false
+                            while q >= iL1 and not found
+                                if close[bar_index - q] > open[bar_index - q]
+                                    j     := q
+                                    found := true
+                                q -= 1
+                            if not sig or L2 > inv
+                                sig  := true
+                                zone := high[bar_index - j]
+                                inv  := L2
+                                mdl  := "CISD"
+                            done := true
+                    if not done and useOB and w.sl.size() > 0
+                        int iL2 = w.sl.last()
+                        if iL2 > iH and low[bar_index - iL2] > low[bar_index - iL1]
+                            int  j2     = iL2
+                            int  q2     = iL2
+                            bool found2 = false
+                            while q2 >= iH and not found2
+                                if close[bar_index - q2] < open[bar_index - q2]
+                                    j2     := q2
+                                    found2 := true
+                                q2 -= 1
+                            float inv2 = low[bar_index - iL2]
+                            if not sig or inv2 > inv
+                                sig  := true
+                                zone := high[bar_index - j2]
+                                inv  := inv2
+                                mdl  := "OB"
+                            done := true
+    [sig, zone, inv, mdl]
+
+f_short(Win w) =>
+    bool   sig  = false
+    float  zone = na
+    float  inv  = na
+    string mdl  = ""
+    if not na(w) and useIFVG and w.bullBot.size() > 0
+        float bot = w.bullBot.last()
+        if close < bot
+            sig  := true
+            zone := bot
+            inv  := w.maxH
+            mdl  := "IFVG"
+    if not na(w) and (useCISD or useOB)
+        int  t    = w.sl.size() - 1
+        int  cnt  = 0
+        bool done = false
+        while t >= 0 and cnt < 3 and not done
+            int iL = w.sl.get(t)
+            t   -= 1
+            cnt += 1
+            int   oL  = bar_index - iL
+            float lvl = low[oL]
+            bool crossed = close < lvl and (oL - 1 < 1 or f_minClose(1, oL - 1) >= lvl)
+            if crossed
+                int iH1 = f_lastBelow(w.sh, iL)
+                if iH1 >= 0
+                    if useCISD and oL - 1 >= 1
+                        float H2 = f_maxHigh(1, oL - 1)
+                        if H2 > high[bar_index - iH1]
+                            int  j     = iL
+                            int  q     = iL
+                            bool found = false
+                            while q >= iH1 and not found
+                                if close[bar_index - q] < open[bar_index - q]
+                                    j     := q
+                                    found := true
+                                q -= 1
+                            if not sig or H2 < inv
+                                sig  := true
+                                zone := low[bar_index - j]
+                                inv  := H2
+                                mdl  := "CISD"
+                            done := true
+                    if not done and useOB and w.sh.size() > 0
+                        int iH2 = w.sh.last()
+                        if iH2 > iL and high[bar_index - iH2] < high[bar_index - iH1]
+                            int  j2     = iH2
+                            int  q2     = iH2
+                            bool found2 = false
+                            while q2 >= iL and not found2
+                                if close[bar_index - q2] > open[bar_index - q2]
+                                    j2     := q2
+                                    found2 := true
+                                q2 -= 1
+                            float inv2 = high[bar_index - iH2]
+                            if not sig or inv2 < inv
+                                sig  := true
+                                zone := low[bar_index - j2]
+                                inv  := inv2
+                                mdl  := "OB"
+                            done := true
+    [sig, zone, inv, mdl]
+
+// Fin de bougie : swings confirmés et FVG LTF formés deviennent connus pour les bougies suivantes ;
+// les FVG inversés par la clôture sont retirés.
+f_endOfBar(Win w, bool isPH, bool isPL) =>
+    if not na(w)
+        int i = bar_index - fracN
+        if isPH and i >= w.start
+            w.sh.push(i)
+        if isPL and i >= w.start
+            w.sl.push(i)
+        int u = w.bearTop.size() - 1
+        while u >= 0
+            if close > w.bearTop.get(u)
+                w.bearTop.remove(u)
+            u -= 1
+        int v = w.bullBot.size() - 1
+        while v >= 0
+            if close < w.bullBot.get(v)
+                w.bullBot.remove(v)
+            v -= 1
+        if bar_index - 2 >= w.start
+            if high < low[2] and low[2] - high >= ifvgMin
+                w.bearTop.push(low[2])
+            if low > high[2] and low - high[2] >= ifvgMin
+                w.bullBot.push(high[2])
+    true
+
+// Stop et objectif (pseudocode §6.2) : [ok, sl, tp]
+f_stops(int d, float e, float tpLevel, float near, float ext3, float inv) =>
+    float b  = bufTicks * syminfo.mintick
+    float sl = na
+    float tp = na
+    bool  ok = false
+    if stopMode == "TP_FIRST"
+        tp := tpLevel
+        float R = d * (tp - e)
+        sl := e - d * R
+        ok := R > 0 and d * (inv - sl) >= b
+    else if stopMode == "STRUCTURE"
+        sl := inv - d * b
+        float R = d * (e - sl)
+        tp := e + d * R
+        ok := R > 0 and d * (tp - near) >= 0
+    else
+        sl := ext3 - d * b
+        float R = d * (e - sl)
+        tp := e + d * R
+        ok := R > 0
+    if ok
+        sl := math.round_to_mintick(sl)
+        tp := math.round_to_mintick(tp)
+        ok := d * (e - sl) > 0 and d * (tp - e) >= distMin
+    [ok, sl, tp]
+
+// ───────── État HTF
+var Bar   cur  = na          // bougie HTF en cours (C3 des setups en formation, C4 des setups armés)
+var Bar   b2   = na          // dernière bougie HTF clôturée (C2)
+var Bar   b1   = na          // avant-dernière (C1)
+var float atrH = na          // ATR14 de Wilder sur les bougies HTF
+var Win   wF   = na          // fenêtre de structure ouverte à l'ouverture de la bougie en cours
+var Win   wA   = na          // fenêtre ouverte à l'ouverture de la bougie précédente
+var bool  fCtx = false       // C1-C2-C3 contigus et C2 conforme au filtre de displacement
+
+// setups armés (C3 clôturée et validée ; C4 = bougie en cours). Bull = issu d'un FVG haussier (short).
+var bool  aBull = false
+var bool  aBear = false
+var bool  aConsBull = false
+var bool  aConsBear = false
+var float aTpBull = na
+var float aTpBear = na
+var float aNearBull = na
+var float aNearBear = na
+var float aExt3Bull = na
+var float aExt3Bear = na
+var float aMid3 = na
+var float aRng3 = na
+var int   aC4Open = na
+var float aO4 = na
+var float aHi4 = na
+var float aLo4 = na
+var int   aForced = na
+var float gTop = na          // gap armé (affichage)
+var float gBot = na
+var int   gLeft = na
+
+newHtf = timeframe.change(htf)
+if newHtf or na(cur)
+    if not na(cur)
+        float prevC = na(b2) ? cur.c : b2.c
+        float tr = math.max(cur.h - cur.l, math.max(math.abs(cur.h - prevC), math.abs(cur.l - prevC)))
+        atrH := na(atrH) ? tr : atrH + (tr - atrH) / 14
+    b1  := b2
+    b2  := cur
+    cur := Bar.new(open, high, low, close, time)
+    wA  := wF
+    wF  := newWin()
+    // un setup armé dont C4 n'est pas la bougie qui s'ouvre (pause de séance) est annulé
+    if (aBull or aBear) and cur.t != aC4Open
+        aBull := false
+        aBear := false
+    fCtx := false
+    if not na(b1) and not na(b2)
+        bool contig = b2.t - b1.t == htfMs and cur.t - b2.t == htfMs
+        float body2 = math.abs(b2.c - b2.o)
+        float rng2  = b2.h - b2.l
+        bool dispOk = (dispK == 0 or body2 >= dispK * atrH) and rng2 > 0 and body2 / rng2 >= bodyMin
+        fCtx := contig and dispOk
+else
+    cur.h := math.max(cur.h, high)
+    cur.l := math.min(cur.l, low)
+    cur.c := close
+
+wF.minL := math.min(wF.minL, low)
+wF.maxH := math.max(wF.maxH, high)
+if not na(wA)
+    wA.minL := math.min(wA.minL, low)
+    wA.maxH := math.max(wA.maxH, high)
+
+isLast = time_close >= cur.t + htfMs                    // dernière bougie LTF de la bougie HTF en cours
+tRem   = (cur.t + htfMs - time_close) / 60000
+hhmm   = hour(time_close, tz) * 100 + minute(time_close, tz)
+inSess = hhmm >= sessStart and hhmm < sessEnd
+
+// suivi de C4 pour les setups armés
+inC4 = (aBull or aBear) and cur.t == aC4Open
+if inC4
+    aHi4 := na(aHi4) ? high : math.max(aHi4, high)
+    aLo4 := na(aLo4) ? low : math.min(aLo4, low)
+    if consume and aBull and low <= aTpBull
+        aConsBull := true
+    if consume and aBear and high >= aTpBear
+        aConsBear := true
+
+// a) expiration : à la clôture de C4, les setups armés ne génèrent plus de signal
+if isLast and inC4
+    aBull := false
+    aBear := false
+
+// b) validation de C3 à sa clôture -> setups armés pour C4 (pseudocode §4)
+armedNow = false
+if isLast and fCtx and not na(b1)
+    float rng3 = cur.h - cur.l
+    // FVG haussier -> short
+    bool sweepB = cur.h > b2.h
+    bool wickB  = rng3 > 0 and (cur.h - math.max(cur.o, cur.c)) >= c3WickMin * rng3
+    bool okB = cur.l - b1.h >= gapMin and cur.c < b2.h and (c3Rule == "close_inside" or sweepB) and (c3Rule != "sweep_c2+wick" or wickB)
+    // FVG baissier -> long
+    bool sweepS = cur.l < b2.l
+    bool wickS  = rng3 > 0 and (math.min(cur.o, cur.c) - cur.l) >= c3WickMin * rng3
+    bool okS = b1.l - cur.h >= gapMin and cur.c > b2.l and (c3Rule == "close_inside" or sweepS) and (c3Rule != "sweep_c2+wick" or wickS)
+    if okB or okS
+        aBull := okB
+        aBear := okS
+        aConsBull := false
+        aConsBear := false
+        aNearBull := cur.l
+        aTpBull   := cur.l - tpDepth * (cur.l - b1.h)
+        aExt3Bull := cur.h
+        aNearBear := cur.h
+        aTpBear   := cur.h + tpDepth * (b1.l - cur.h)
+        aExt3Bear := cur.l
+        aMid3     := (cur.h + cur.l) / 2
+        aRng3     := rng3
+        aC4Open   := cur.t + htfMs
+        aO4       := na
+        aHi4      := na
+        aLo4      := na
+        aForced   := forcedExit == "cloture_C4" ? cur.t + 2 * htfMs : forcedExit == "cloture_C5" ? cur.t + 3 * htfMs : na
+        gTop      := okB ? cur.l : b1.l
+        gBot      := okB ? b1.h : cur.h
+        gLeft     := b1.t
+        armedNow  := true
+if inC4 and na(aO4)
+    aO4 := open
+
+// ───────── Signaux de la bougie (au plus un : le setup le plus ancien d'abord, comme en Python)
+[sigLA, zLA, iLA, mLA] = f_long(armedNow ? wF : wA)
+[sigSA, zSA, iSA, mSA] = f_short(armedNow ? wF : wA)
+[sigLF, zLF, iLF, mLF] = f_long(wF)
+[sigSF, zSF, iSF, mSF] = f_short(wF)
+
+bool   sig     = false
+int    sDir    = 0
+float  sEntry  = na
+float  sSL     = na
+float  sTP     = na
+string sModel  = ""
+string sWin    = ""
+bool   sLimit  = false
+int    sForced = na
+int    sExpire = na
+
+// W2 : setups armés (pendant C4, et sur la dernière bougie de C3 juste après validation)
+canW2 = w2On and (armedNow or (inC4 and not isLast))
+flipOkShort = not flipReq or armedNow or (aHi4 > aO4 and close < aO4)
+flipOkLong  = not flipReq or armedNow or (aLo4 < aO4 and close > aO4)
+bigA = htf == "60" and bigRange1h > 0 and aRng3 > bigRange1h
+if inSess and canW2 and aBull and not aConsBull and sigSA and flipOkShort
+    float e = bigA ? aMid3 : orderType == "limite_zone" ? zSA : close
+    [ok, sl, tp] = f_stops(-1, e, aTpBull, aNearBull, aExt3Bull, iSA)
+    if ok
+        sig := true
+        sDir := -1
+        sEntry := e
+        sSL := sl
+        sTP := tp
+        sModel := mSA
+        sWin := "W2"
+        sLimit := bigA or orderType == "limite_zone"
+        sForced := aForced
+        sExpire := aC4Open + htfMs
+if not sig and inSess and canW2 and aBear and not aConsBear and sigLA and flipOkLong
+    float e = bigA ? aMid3 : orderType == "limite_zone" ? zLA : close
+    [ok, sl, tp] = f_stops(1, e, aTpBear, aNearBear, aExt3Bear, iLA)
+    if ok
+        sig := true
+        sDir := 1
+        sEntry := e
+        sSL := sl
+        sTP := tp
+        sModel := mLA
+        sWin := "W2"
+        sLimit := bigA or orderType == "limite_zone"
+        sForced := aForced
+        sExpire := aC4Open + htfMs
+
+// W1 : setups en formation, dans les dernières minutes de C3
+canW1 = w1On and fCtx and not na(b1) and tRem > 0 and tRem <= w1Min
+rngC2 = na(b2) ? na : b2.h - b2.l
+forcedF = forcedExit == "cloture_C4" ? cur.t + 2 * htfMs : forcedExit == "cloture_C5" ? cur.t + 3 * htfMs : na
+bigF = htf == "60" and bigRange1h > 0 and (cur.h - cur.l) > bigRange1h
+if not sig and inSess and canW1 and sigSF
+    bool okF = cur.l - b1.h >= gapMin and (c3Rule == "close_inside" or cur.h > b2.h) and close < b2.h and (b2.h - close) >= w1DistFrac * rngC2
+    if okF
+        float e = bigF ? (cur.h + cur.l) / 2 : orderType == "limite_zone" ? zSF : close
+        [ok, sl, tp] = f_stops(-1, e, cur.l - tpDepth * (cur.l - b1.h), cur.l, cur.h, iSF)
+        if ok
+            sig := true
+            sDir := -1
+            sEntry := e
+            sSL := sl
+            sTP := tp
+            sModel := mSF
+            sWin := "W1"
+            sLimit := bigF or orderType == "limite_zone"
+            sForced := forcedF
+            sExpire := cur.t + 2 * htfMs
+if not sig and inSess and canW1 and sigLF
+    bool okF = b1.l - cur.h >= gapMin and (c3Rule == "close_inside" or cur.l < b2.l) and close > b2.l and (close - b2.l) >= w1DistFrac * rngC2
+    if okF
+        float e = bigF ? (cur.h + cur.l) / 2 : orderType == "limite_zone" ? zLF : close
+        [ok, sl, tp] = f_stops(1, e, cur.h + tpDepth * (b1.l - cur.h), cur.h, cur.l, iLF)
+        if ok
+            sig := true
+            sDir := 1
+            sEntry := e
+            sSL := sl
+            sTP := tp
+            sModel := mLF
+            sWin := "W1"
+            sLimit := bigF or orderType == "limite_zone"
+            sForced := forcedF
+            sExpire := cur.t + 2 * htfMs
+
+// ───────── Fin de bougie : mise à jour des structures LTF (après l'évaluation, pas de lookahead)
+bool isPH = true
+bool isPL = true
+for jj = 1 to fracN
+    isPH := isPH and high[fracN] > high[fracN + jj] and high[fracN] > high[fracN - jj]
+    isPL := isPL and low[fracN] < low[fracN + jj] and low[fracN] < low[fracN - jj]
+f_endOfBar(wF, isPH, isPL)
+f_endOfBar(wA, isPH, isPL)
+
+// journée de trading CME (18:00 ET = début du jour suivant)
+t6 = time_close + 6 * 3600000
+tradingDay = year(t6, tz) * 10000 + month(t6, tz) * 100 + dayofmonth(t6, tz)
+
+// ───────── Affichage commun
+grpV = "5. Affichage"
+showGap = input.bool(true, "Zone du gap armé", group=grpV)
+showWin = input.bool(true, "Fond des fenêtres W1 / W2", group=grpV)
+colL = input.color(color.new(color.teal, 0), "Long", group=grpV)
+colS = input.color(color.new(color.red, 0), "Short", group=grpV)
+
+if armedNow and showGap
+    box.new(gLeft, gTop, aC4Open + htfMs, gBot, xloc=xloc.bar_time, border_color=color.new(color.gray, 40),
+         bgcolor=aBull ? color.new(color.red, 88) : color.new(color.teal, 88), text=aBull ? "UFVG ↓" : "UFVG ↑",
+         text_size=size.tiny, text_color=color.gray)
+
+w1Live = canW1 and ((cur.l - b1.h >= gapMin and close < b2.h) or (b1.l - cur.h >= gapMin and close > b2.l))
+w2Live = inC4 and not isLast and ((aBull and not aConsBull) or (aBear and not aConsBear))
+bgcolor(showWin and w1Live ? color.new(color.orange, 88) : showWin and w2Live ? color.new(color.blue, 90) : na)
+
+// ───────── Ordres
+var int  dayKey = na
+var int  dayCount = 0
+var int  posForced = na
+var int  pendExpire = na
+var int  pendForced = na
+if tradingDay != dayKey
+    dayKey := tradingDay
+    dayCount := 0
+
+opened = strategy.position_size != 0 and strategy.position_size[1] == 0
+if opened
+    dayCount += 1
+    posForced := pendForced
+
+// ordre limite non rempli à l'expiration
+if strategy.position_size == 0 and not na(pendExpire) and time_close >= pendExpire
+    strategy.cancel("UFVG")
+    pendExpire := na
+
+// sortie forcée
+if strategy.position_size != 0 and not na(posForced) and time_close >= posForced
+    strategy.close_all(comment="temps")
+
+flat = strategy.position_size == 0 and na(pendExpire)
+if sig and flat and dayCount < maxPerDay
+    dirStr = sDir > 0 ? strategy.long : strategy.short
+    if sLimit
+        strategy.entry("UFVG", dirStr, limit=sEntry, comment=sModel + " " + sWin)
+        pendExpire := sExpire
+    else
+        strategy.entry("UFVG", dirStr, comment=sModel + " " + sWin)
+    strategy.exit("UFVG sortie", from_entry="UFVG", stop=sSL, limit=sTP)
+    pendForced := sForced
+    alert((sDir > 0 ? "UFVG long " : "UFVG short ") + sModel + " " + sWin + " SL " + str.tostring(sSL) + " TP " + str.tostring(sTP), alert.freq_once_per_bar_close)
+if opened
+    pendExpire := na

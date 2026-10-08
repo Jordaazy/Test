@@ -18,8 +18,8 @@ Objectif : extraire la stratégie de trading de la chaîne YouTube
 | 0 — Collecte | ✅ (périmètre réduit validé : 16 vidéos, 9 transcrites) | `data/index.csv`, `data/transcripts/`, `data/classification.csv`, `data/ordre_lecture.md` |
 | 1 — Extraction | ✅ | `notes/` (9 fiches, citations vérifiées) |
 | 2 — Synthèse | ✅ | `strategy/glossaire.md`, `regles.md`, `evolution.md`, `contradictions.md`, `questions.md` |
-| 3 — Formalisation | ✅ — **en attente de validation** | `strategy/pseudocode.md`, `strategy/parametres.json` (+ `parametres.md`) |
-| 4 — Code | à faire | indicateur Pine v6, `strategy()` Pine, backtest Python (données Databento NQ requises) |
+| 3 — Formalisation | ✅ | `strategy/pseudocode.md`, `strategy/parametres.json` (+ `parametres.md`) |
+| 4 — Code | ✅ (Pine à compiler côté TradingView) | `pine/` (indicateur + strategy), `backtest/` (moteur Python + tests), `results/README.md` (synthèse) |
 
 Outils de contrôle : `scripts/find_quote.py` (timestamp d'une citation), `scripts/check_citations.py`
 (chaque citation des fiches existe dans la transcription), `scripts/linkify.py`, `scripts/params_table.py`.
@@ -39,7 +39,11 @@ data/
   ordre_lecture.md        # ordre de lecture proposé                (Phase 0.3)
 notes/                    # Phase 1 : une fiche par vidéo (index : notes/README.md)
 strategy/                 # Phase 2-3 : glossaire, règles, évolution, contradictions, questions, pseudo-code, paramètres
-scripts/                  # pipeline
+scripts/                  # pipeline de collecte et outils de contrôle des citations
+backtest/                 # Phase 4 : préparation Databento, moteur, statistiques, expériences
+tests/                    # tests du moteur (python3 -m pytest tests)
+pine/                     # Phase 4 : scripts TradingView v6 (mode d'emploi : pine/README.md)
+results/                  # Phase 4 : rapport de backtest (aucune donnée de marché brute)
 ```
 
 ## Phase 0 — exécution
