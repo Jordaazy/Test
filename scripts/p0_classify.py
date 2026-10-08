@@ -66,7 +66,8 @@ def main():
     out = []
     for r in rows:
         vid = r["video_id"]
-        meta = json.loads((META_DIR / f"{vid}.json").read_text())
+        mpath = META_DIR / f"{vid}.json"
+        meta = json.loads(mpath.read_text()) if mpath.exists() else {}
         title, desc = r["title"], meta.get("description") or ""
         tpath = TJSON / f"{vid}.json"
         transcript = ""

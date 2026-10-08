@@ -54,7 +54,11 @@ def base_opts(args):
 
 
 def list_ids(args):
-    """Retourne {video_id: type} à partir des onglets de la chaîne."""
+    """Retourne {video_id: infos "flat"} à partir des onglets de la chaîne.
+
+    tab_rank = position dans l'onglet (1 = la plus récente) : seul repère chronologique
+    disponible quand la date de publication ne peut pas être récupérée.
+    """
     found = {}
     opts = base_opts(args) | {"extract_flat": "in_playlist"}
     with yt_dlp.YoutubeDL(opts) as ydl:
@@ -63,9 +67,10 @@ def list_ids(args):
             info = ydl.extract_info(url, download=False)
             entries = (info or {}).get("entries") or []
             n = 0
-            for e in entries:
+            for rank, e in enumerate(entries, 1):
                 if e and e.get("id") and e["id"] not in found:
-                    found[e["id"]] = vtype
+                    found[e["id"]] = {"type": vtype, "tab_rank": rank, "title": e.get("title"),
+                                      "duration": e.get("duration"), "view_count": e.get("view_count")}
                     n += 1
             print(f"[index] onglet {tab}: {n} vidéos", file=sys.stderr)
     return found
@@ -105,37 +110,46 @@ def main():
     if not ids:
         sys.exit("[index] aucune vidéo trouvée (accès YouTube ?)")
 
-    rows, failed = [], []
-    for i, (vid, vtype) in enumerate(ids.items(), 1):
-        meta = fetch_meta(vid, args)
-        if not meta:
+    rows, failed, streak = [], [], 0
+    for i, (vid, flat) in enumerate(ids.items(), 1):
+        # Après 5 échecs consécutifs (ex. "confirm you're not a bot"), on arrête de solliciter
+        # YouTube vidéo par vidéo et on garde les infos "flat" pour le reste.
+        meta = fetch_meta(vid, args) if streak < 5 or (META_DIR / f"{vid}.json").exists() else None
+        if meta:
+            streak = 0
+        else:
+            streak += 1
             failed.append(vid)
-            continue
+            meta = {}
         d = meta.get("upload_date") or ""
+        duration = meta.get("duration") or flat["duration"]
         rows.append({
             "video_id": vid,
             "upload_date": f"{d[:4]}-{d[4:6]}-{d[6:]}" if len(d) == 8 else "",
-            "title": meta.get("title") or "",
-            "duration_s": meta.get("duration") or "",
-            "duration": hms(meta.get("duration")),
+            "title": meta.get("title") or flat["title"] or "",
+            "duration_s": duration or "",
+            "duration": hms(duration),
             "url": f"https://www.youtube.com/watch?v={vid}",
-            "type": vtype,
+            "type": flat["type"],
+            "tab_rank": flat["tab_rank"],
             "language": meta.get("language") or "",
             "manual_subs": ";".join(sorted(meta.get("subtitles") or {})),
             "auto_orig": ";".join(sorted(k for k in (meta.get("automatic_captions") or {}) if k.endswith("-orig"))),
-            "view_count": meta.get("view_count") or "",
+            "view_count": meta.get("view_count") or flat["view_count"] or "",
             "chapters": len(meta.get("chapters") or []),
+            "meta": "full" if meta else "flat-only",
         })
         if i % 25 == 0:
             print(f"[index] {i}/{len(ids)}", file=sys.stderr)
 
-    rows.sort(key=lambda r: (r["upload_date"], r["video_id"]))
+    # Chronologique : par date quand elle est connue, sinon par type puis du plus ancien au plus récent.
+    rows.sort(key=lambda r: (r["upload_date"] or "9999", r["type"], -int(r["tab_rank"])))
     with INDEX_CSV.open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader()
         w.writerows(rows)
-    print(f"[index] {len(rows)} vidéos -> {INDEX_CSV.relative_to(ROOT)} ; échecs : {len(failed)} {failed[:10]}",
-          file=sys.stderr)
+    print(f"[index] {len(rows)} vidéos -> {INDEX_CSV.relative_to(ROOT)} ; "
+          f"sans métadonnées complètes : {len(failed)}", file=sys.stderr)
 
 
 if __name__ == "__main__":
