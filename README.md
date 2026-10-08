@@ -11,6 +11,19 @@ Objectif : extraire la stratégie de trading de la chaîne YouTube
 - `[VISUEL @ H:MM:SS]` = passage qui dépend de ce qui est montré à l'écran (non vérifiable par la transcription seule).
 - Une phase à la fois, validation avant la suivante.
 
+## État d'avancement
+
+| Phase | Statut | Livrables |
+|---|---|---|
+| 0 — Collecte | ✅ (périmètre réduit validé : 16 vidéos, 9 transcrites) | `data/index.csv`, `data/transcripts/`, `data/classification.csv`, `data/ordre_lecture.md` |
+| 1 — Extraction | ✅ | `notes/` (9 fiches, citations vérifiées) |
+| 2 — Synthèse | ✅ | `strategy/glossaire.md`, `regles.md`, `evolution.md`, `contradictions.md`, `questions.md` |
+| 3 — Formalisation | ✅ — **en attente de validation** | `strategy/pseudocode.md`, `strategy/parametres.json` (+ `parametres.md`) |
+| 4 — Code | à faire | indicateur Pine v6, `strategy()` Pine, backtest Python (données Databento NQ requises) |
+
+Outils de contrôle : `scripts/find_quote.py` (timestamp d'une citation), `scripts/check_citations.py`
+(chaque citation des fiches existe dans la transcription), `scripts/linkify.py`, `scripts/params_table.py`.
+
 ## Arborescence
 
 ```
@@ -24,8 +37,8 @@ data/
   classification_auto.csv # pré-tri automatique par mots-clés (non conclusif)
   classification.csv      # classement final, validé à la lecture  (Phase 0.3)
   ordre_lecture.md        # ordre de lecture proposé                (Phase 0.3)
-notes/                    # Phase 1 : une fiche par vidéo
-strategy/                 # Phase 2-3 : glossaire, règles, questions, pseudo-code
+notes/                    # Phase 1 : une fiche par vidéo (index : notes/README.md)
+strategy/                 # Phase 2-3 : glossaire, règles, évolution, contradictions, questions, pseudo-code, paramètres
 scripts/                  # pipeline
 ```
 

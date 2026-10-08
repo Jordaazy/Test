@@ -1,0 +1,446 @@
+{
+  "_doc": "Paramètres du modèle A (unfilled FVG). 'default' = version de référence (strategy/questions.md, section « Décisions à valider »). 'test' = plage de robustesse. 'q' = question associée. 'statut' = origine de la valeur : EXPLICITE (dite par lui), PROPOSITION (il ne chiffre rien), CHOIX (convention technique).",
+  "groupes": {
+    "cadre": [
+      {
+        "nom": "instrument",
+        "default": "NQ",
+        "test": [
+          "NQ"
+        ],
+        "q": "Q17",
+        "statut": "EXPLICITE",
+        "note": "MNQ = même signal"
+      },
+      {
+        "nom": "htf_minutes",
+        "default": 15,
+        "test": [
+          15,
+          60,
+          240
+        ],
+        "q": "Q13",
+        "statut": "EXPLICITE",
+        "note": "15 min = cœur du modèle"
+      },
+      {
+        "nom": "ltf_map",
+        "default": {
+          "15": 1,
+          "60": 5,
+          "240": 15
+        },
+        "test": [
+          {
+            "15": 2,
+            "60": 3
+          }
+        ],
+        "q": "Q13",
+        "statut": "EXPLICITE",
+        "note": "exceptions 2 min / 3 min observées"
+      },
+      {
+        "nom": "session_et",
+        "default": [
+          "08:30",
+          "16:00"
+        ],
+        "test": [
+          [
+            "00:00",
+            "24:00"
+          ],
+          [
+            "09:30",
+            "11:30"
+          ],
+          [
+            "09:30",
+            "16:00"
+          ]
+        ],
+        "q": "Q12",
+        "statut": "PROPOSITION",
+        "note": "fenêtre d'ENTRÉE ; les positions peuvent sortir après"
+      },
+      {
+        "nom": "max_trades_par_jour",
+        "default": 1,
+        "test": [
+          1,
+          2,
+          3,
+          99
+        ],
+        "q": "Q11",
+        "statut": "EXPLICITE"
+      },
+      {
+        "nom": "ancrage_4h_et",
+        "default": "18:00",
+        "test": [
+          "18:00",
+          "00:00"
+        ],
+        "q": "Q16",
+        "statut": "CHOIX"
+      }
+    ],
+    "setup_htf": [
+      {
+        "nom": "gap_min_points",
+        "default": 0.25,
+        "test": [
+          0.25,
+          2,
+          5
+        ],
+        "q": "Q5",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "c3_regle",
+        "default": "close_inside",
+        "test": [
+          "close_inside",
+          "sweep_c2",
+          "sweep_c2+wick"
+        ],
+        "q": "Q3",
+        "statut": "EXPLICITE",
+        "note": "close_inside : c(C3) < h(C2) pour un FVG haussier"
+      },
+      {
+        "nom": "c3_wick_min",
+        "default": 0.3,
+        "test": [
+          0.3,
+          0.5
+        ],
+        "q": "Q3",
+        "statut": "PROPOSITION",
+        "note": "utilisé seulement si c3_regle contient wick"
+      },
+      {
+        "nom": "c2_displacement_atr_k",
+        "default": 0,
+        "test": [
+          0,
+          0.75,
+          1.0,
+          1.5
+        ],
+        "q": "Q4",
+        "statut": "PROPOSITION",
+        "note": "0 = filtre désactivé ; corps(C2) >= k * ATR14(HTF)"
+      },
+      {
+        "nom": "c2_body_ratio_min",
+        "default": 0,
+        "test": [
+          0,
+          0.5,
+          0.7
+        ],
+        "q": "Q4",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "consommer_si_gap_touche",
+        "default": true,
+        "test": [
+          true,
+          false
+        ],
+        "q": "Q19",
+        "statut": "PROPOSITION"
+      }
+    ],
+    "timing": [
+      {
+        "nom": "w1_actif",
+        "default": true,
+        "test": [
+          true,
+          false
+        ],
+        "q": "Q6",
+        "statut": "EXPLICITE"
+      },
+      {
+        "nom": "w1_minutes_avant_cloture",
+        "default": {
+          "15": 4,
+          "60": 10,
+          "240": 30
+        },
+        "test": [
+          {
+            "15": 2
+          },
+          {
+            "15": 6
+          },
+          {
+            "60": 5
+          }
+        ],
+        "q": "Q6",
+        "statut": "EXPLICITE (15 et 60) / PROPOSITION (240)"
+      },
+      {
+        "nom": "w1_distance_c2_frac",
+        "default": 0.25,
+        "test": [
+          0,
+          0.15,
+          0.25,
+          0.5
+        ],
+        "q": "Q7",
+        "statut": "PROPOSITION",
+        "note": "|prix - extrême(C2)| >= frac * range(C2)"
+      },
+      {
+        "nom": "w2_actif",
+        "default": true,
+        "test": [
+          true,
+          false
+        ],
+        "q": "Q6",
+        "statut": "EXPLICITE"
+      },
+      {
+        "nom": "w2_flip_requis",
+        "default": false,
+        "test": [
+          false,
+          true
+        ],
+        "q": "Q6",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "sortie_forcee",
+        "default": "cloture_C5",
+        "test": [
+          "cloture_C4",
+          "cloture_C5",
+          "jamais"
+        ],
+        "q": "Q10",
+        "statut": "PROPOSITION"
+      }
+    ],
+    "entree_ltf": [
+      {
+        "nom": "modeles",
+        "default": [
+          "IFVG",
+          "CISD"
+        ],
+        "test": [
+          [
+            "IFVG"
+          ],
+          [
+            "CISD"
+          ],
+          [
+            "IFVG",
+            "CISD",
+            "OB"
+          ],
+          [
+            "CISD_OPEN"
+          ]
+        ],
+        "q": "Q8",
+        "statut": "EXPLICITE (V2)"
+      },
+      {
+        "nom": "fractal_n",
+        "default": 2,
+        "test": [
+          1,
+          2,
+          3
+        ],
+        "q": "Q8",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "fenetre_structure_debut",
+        "default": "ouverture_C3",
+        "test": [
+          "ouverture_C3",
+          "ouverture_C2"
+        ],
+        "q": "Q8",
+        "statut": "PROPOSITION",
+        "note": "début de la fenêtre où l'on cherche swings / FVG LTF ; il parle de la structure « within that third candle »"
+      },
+      {
+        "nom": "ifvg_min_points",
+        "default": 0.25,
+        "test": [
+          0.25,
+          1,
+          2
+        ],
+        "q": "Q8",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "type_ordre",
+        "default": "marche_cloture",
+        "test": [
+          "marche_cloture",
+          "limite_zone"
+        ],
+        "q": "Q9",
+        "statut": "EXPLICITE (les deux sont utilisés)"
+      }
+    ],
+    "sortie": [
+      {
+        "nom": "tp_profondeur",
+        "default": 0,
+        "test": [
+          0,
+          0.25,
+          0.5,
+          1.0
+        ],
+        "q": "Q1",
+        "statut": "CONTRADICTOIRE → défaut sur V3",
+        "note": "0 = bord proche, 1 = comblement total"
+      },
+      {
+        "nom": "stop_mode",
+        "default": "TP_FIRST",
+        "test": [
+          "TP_FIRST",
+          "STRUCTURE",
+          "C3_EXTREME"
+        ],
+        "q": "Q2",
+        "statut": "CONTRADICTOIRE"
+      },
+      {
+        "nom": "stop_buffer_ticks",
+        "default": 2,
+        "test": [
+          0,
+          2,
+          4
+        ],
+        "q": "Q2",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "rr",
+        "default": 1.0,
+        "test": [
+          1.0
+        ],
+        "q": "—",
+        "statut": "EXPLICITE",
+        "note": "non optimisé : c'est une règle du modèle"
+      },
+      {
+        "nom": "distance_tp_min_points",
+        "default": {
+          "15": 8,
+          "60": 15,
+          "240": 25
+        },
+        "test": [
+          {
+            "15": 5
+          },
+          {
+            "15": 12
+          },
+          {
+            "15": 20
+          }
+        ],
+        "q": "Q5",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "be_a_R",
+        "default": null,
+        "test": [
+          null,
+          0.5,
+          0.7
+        ],
+        "q": "Q14",
+        "statut": "PROPOSITION",
+        "note": "null = pas de break-even"
+      },
+      {
+        "nom": "grand_range_points_1h",
+        "default": 150,
+        "test": [
+          100,
+          150,
+          200,
+          null
+        ],
+        "q": "Q15",
+        "statut": "EXPLICITE",
+        "note": "au-delà : entrée seulement en limite à 50 % du range de C3 ; null = règle désactivée"
+      }
+    ],
+    "couts": [
+      {
+        "nom": "commission_aller_retour_usd",
+        "default": 4.5,
+        "test": [
+          4.5
+        ],
+        "q": "Q18",
+        "statut": "PROPOSITION",
+        "note": "à remplacer par tes frais réels"
+      },
+      {
+        "nom": "slippage_ticks_marche_et_stop",
+        "default": 1,
+        "test": [
+          0,
+          1,
+          2
+        ],
+        "q": "Q18",
+        "statut": "PROPOSITION"
+      },
+      {
+        "nom": "limite_trade_through_ticks",
+        "default": 1,
+        "test": [
+          0,
+          1
+        ],
+        "q": "Q18",
+        "statut": "CHOIX",
+        "note": "une limite n'est remplie que si le prix la dépasse d'1 tick"
+      },
+      {
+        "nom": "meme_bougie_sl_tp",
+        "default": "SL_dabord",
+        "test": [
+          "SL_dabord"
+        ],
+        "q": "Q18",
+        "statut": "CHOIX",
+        "note": "hypothèse pessimiste en 1 min ; affinable avec des données 1 s"
+      }
+    ]
+  }
+}
